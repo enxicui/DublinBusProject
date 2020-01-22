@@ -1,0 +1,346 @@
+[
+  {
+    "Route": 150,
+    "Stops": "Hawkin's Street - Orwell Road"
+  },
+  {
+    "Route": 42,
+    "Stops": "Wendell Avenue - Talbot Street (opp Bank of Ireland)"
+  },
+  {
+    "Route": 130,
+    "Stops": "National Lottery Head Quarters - Clontarf Castle"
+  },
+  {
+    "Route": 155,
+    "Stops": "St.Margaret's Road - Outside Train Station"
+  },
+  {
+    "Route": 120,
+    "Stops": "Merrion Road"
+  },
+  {
+    "Route": "46A",
+    "Stops": "Outside Train Station - Phoenix Park Gate"
+  },
+  {
+    "Route": 14,
+    "Stops": "Maryfield Drive - Outside Luas Station"
+  },
+  {
+    "Route": "54A",
+    "Stops": "Marlfield Estate - Trinity College"
+  },
+  {
+    "Route": 16,
+    "Stops": "Kingston Estate - Dublin Airport"
+  },
+  {
+    "Route": 66,
+    "Stops": "Merrion Square South - Kingsbury Estate"
+  },
+  {
+    "Route": 37,
+    "Stops": "Wilton Terrace - Shopping Centre"
+  },
+  {
+    "Route": "15A",
+    "Stops": "Greenhills College - Barrow Street"
+  },
+  {
+    "Route": 4,
+    "Stops": "Monkstown Fitness Centre - Harristown Bus Garage"
+  },
+  {
+    "Route": 145,
+    "Stops": "Kilmacanogue (Esso Garage) - Outside Heuston Train Station"
+  },
+  {
+    "Route": "68A",
+    "Stops": "Bulfin Road - Poolbeg Street"
+  },
+  {
+    "Route": 49,
+    "Stops": "Trinity College - The Square Shopping Centre"
+  },
+  {
+    "Route": 40,
+    "Stops": "Liffey Valley Shopping Centre - Charlestown Centre"
+  },
+  {
+    "Route": 70,
+    "Stops": "Dunboyne Village - Burlington Road (Mespil Road)"
+  },
+  {
+    "Route": "38A",
+    "Stops": "Damastown Drive - Burlington Road (Mespil Road)"
+  },
+  {
+    "Route": 83,
+    "Stops": "Harristown Bus Garage - Stannaway Court"
+  },
+  {
+    "Route": 747,
+    "Stops": "Victoria Quay - Dublin Airport"
+  },
+  {
+    "Route": 27,
+    "Stops": "Fortunestown Road - Templeview Avenue"
+  },
+  {
+    "Route": "66B",
+    "Stops": "Alensgrove - Merrion Square South"
+  },
+  {
+    "Route": 79,
+    "Stops": "Aston Quay - Spiddal Park"
+  },
+  {
+    "Route": 122,
+    "Stops": "Drimnagh Road (Our Lady's Hospital for Sick Children) - Ashington Gardens"
+  },
+  {
+    "Route": "40D",
+    "Stops": "The Oaks - Marlborough Street"
+  },
+  {
+    "Route": 9,
+    "Stops": "Charlestown Shopping Centre - Greenhills College"
+  },
+  {
+    "Route": 11,
+    "Stops": "Blackthorn Road - Saint Pappin's Road"
+  },
+  {
+    "Route": 140,
+    "Stops": "Saint Margaret's Road - Upper Rathmines Road"
+  },
+  {
+    "Route": 1,
+    "Stops": "Shanard Road (Shanard Avenue) - Saint John's Road East"
+  },
+  {
+    "Route": 757,
+    "Stops": "Dublin Airport - Charlotte Way"
+  },
+  {
+    "Route": 47,
+    "Stops": "Belarmine Plaza - Virtual Stop Townsend Street"
+  },
+  {
+    "Route": 38,
+    "Stops": "Burlington Road (Mespil Road) - Damastown Drive"
+  },
+  {
+    "Route": "25B",
+    "Stops": "Merrion Square South - Outside Train Station"
+  },
+  {
+    "Route": 15,
+    "Stops": "Main Street - Ballycullen Road (Hunter's Avenue)"
+  },
+  {
+    "Route": "29A",
+    "Stops": "Baldoyle Village - National Lottery Head Quarters"
+  },
+  {
+    "Route": "66A",
+    "Stops": "River Forest Estate - Merrion Square South"
+  },
+  {
+    "Route": 65,
+    "Stops": "Valleymount Road - Poolbeg Street"
+  },
+  {
+    "Route": 7,
+    "Stops": "Bride's Glen Bus Stop - Mountjoy Square Nth"
+  },
+  {
+    "Route": "39A",
+    "Stops": "Delhurst Estate - University College Dublin"
+  },
+  {
+    "Route": 41,
+    "Stops": "Rolestown Cottages - Marlborough Street"
+  },
+  {
+    "Route": "15B",
+    "Stops": "Ringsend Road - Dalriada Estate"
+  },
+  {
+    "Route": "77A",
+    "Stops": "Bianconi Avenue - Barrow Street"
+  },
+  {
+    "Route": "83A",
+    "Stops": "Stannaway Court - Charlestown Shopping Centre"
+  },
+  {
+    "Route": "27B",
+    "Stops": "Harristown Bus Garage - Eden Quay"
+  },
+  {
+    "Route": "25A",
+    "Stops": "Newcastle Road - Merrion Square South"
+  },
+  {
+    "Route": "40B",
+    "Stops": "The Gate Hotel - River Meade Avenue"
+  },
+  {
+    "Route": 151,
+    "Stops": "Foxborough Estate - Bargy Road"
+  },
+  {
+    "Route": 123,
+    "Stops": "Griffith Avenue (Malahide Road) - Kilnamanagh Road"
+  },
+  {
+    "Route": 32,
+    "Stops": "Talbot Street - Malahide Garda Station"
+  },
+  {
+    "Route": 43,
+    "Stops": "Jugback Lane Glen Ellan Road Swords - Talbot Street (opp Bank of Ireland)"
+  },
+  {
+    "Route": "27X",
+    "Stops": "Templeview Avenue - University College Dublin"
+  },
+  {
+    "Route": 84,
+    "Stops": "Sea Road - Temple Road"
+  },
+  {
+    "Route": "79A",
+    "Stops": "Park West Avenue - Aston Quay"
+  },
+  {
+    "Route": 44,
+    "Stops": "The Helix - Powerscourt National School"
+  },
+  {
+    "Route": 39,
+    "Stops": "University College Dublin - Ongar Road (Hansfield Road)"
+  },
+  {
+    "Route": "33X",
+    "Stops": "Northcliffe Heights - Merrion Square West"
+  },
+  {
+    "Route": "14C",
+    "Stops": "Outside Luas Station - Eden Quay"
+  },
+  {
+    "Route": "84A",
+    "Stops": "Outside Train Station - Saint Vincent's Hospital"
+  },
+  {
+    "Route": "27A",
+    "Stops": "Liberty Hall - Blunden Drive"
+  },
+  {
+    "Route": "65B",
+    "Stops": "Poolbeg Street - Bianconi Avenue"
+  },
+  {
+    "Route": "41C",
+    "Stops": "Marlborough Street - Abbeyvale Estate"
+  },
+  {
+    "Route": "31A",
+    "Stops": "Sutton Castle - Talbot Street"
+  },
+  {
+    "Route": 31,
+    "Stops": "Talbot Street - Howth Summit"
+  },
+  {
+    "Route": 13,
+    "Stops": "Harristown Bus Garage - Business Park Bus Terminus"
+  },
+  {
+    "Route": 69,
+    "Stops": "Rathlawns (Green Lane) - Poolbeg Street"
+  },
+  {
+    "Route": "7A",
+    "Stops": "Mountjoy Square Park - Loughlinstown Wood Estate"
+  },
+  {
+    "Route": "40E",
+    "Stops": "Carlton Hotel - Broombridge Luas"
+  },
+  {
+    "Route": 25,
+    "Stops": "Dodsboro Road - Merrion Square South"
+  },
+  {
+    "Route": 53,
+    "Stops": "Talbot Street (opp Bank of Ireland) - Irish Ferries Terminal"
+  },
+  {
+    "Route": 61,
+    "Stops": "Eden Quay - Edmondstown Road (Rockbrook Park School)"
+  },
+  {
+    "Route": 68,
+    "Stops": "Greenoge - Poolbeg Street"
+  },
+  {
+    "Route": 26,
+    "Stops": "Liffey Valley Shopping Centre - Merrion Square South"
+  },
+  {
+    "Route": "56A",
+    "Stops": "The Square Shopping Centre - Barrow Street"
+  },
+  {
+    "Route": "7D",
+    "Stops": "Mountjoy Square Nth - Castle Street"
+  },
+  {
+    "Route": 67,
+    "Stops": "Merrion Square South - Straffan Road"
+  },
+  {
+    "Route": 33,
+    "Stops": "Saint Paul's Crescent - Irish Life Mall"
+  },
+  {
+    "Route": "66X",
+    "Stops": "University College Dublin - Alensgrove"
+  },
+  {
+    "Route": "66E",
+    "Stops": "Merrion Square South - Kingsbury Estate"
+  },
+  {
+    "Route": "38B",
+    "Stops": "Damastown Drive - Burlington Road (Mespil Road)"
+  },
+  {
+    "Route": "67X",
+    "Stops": "Salesian College - University College Dublin"
+  },
+  {
+    "Route": 116,
+    "Stops": "Church of Our Lady of Good Council - Parnell Square North"
+  },
+  {
+    "Route": "16C",
+    "Stops": "Kingston Estate - Rotunda Hospital"
+  },
+  {
+    "Route": "44B",
+    "Stops": "Outside Luas Station - Hill View"
+  },
+  {
+    "Route": "38D",
+    "Stops": "Damastown Drive - Burlington Road (Mespil Road)"
+  },
+  {
+    "Route": "31B",
+    "Stops": "Talbot Street - Howth Summit"
+  }
+]

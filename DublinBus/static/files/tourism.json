@@ -1,0 +1,140 @@
+[
+  {
+    "num": 1,
+    "name": "Bray Head",
+    "lat": 53.18764925,
+    "lon": -6.083832998
+  },
+  {
+    "num": 2,
+    "name": "Killiney Hill",
+    "lat": 53.2666656,
+    "lon": -6.1166662
+  },
+  {
+    "num": 3,
+    "name": "Dundrum Town Centre",
+    "lat": 53.28499886,
+    "lon": -6.23833238
+  },
+  {
+    "num": 4,
+    "name": "University College Dublin",
+    "lat": 53.30499878,
+    "lon": -6.21999912
+  },
+  {
+    "num": 5,
+    "name": "Dublin Bay",
+    "lat": 53.333332,
+    "lon": -6.1166662
+  },
+  {
+    "num": 6,
+    "name": "St Stephen's Green",
+    "lat": 53.33616532,
+    "lon": -6.255498978
+  },
+  {
+    "num": 7,
+    "name": "St Patrick's Cathedral",
+    "lat": 53.33699865,
+    "lon": -6.269498922
+  },
+  {
+    "num": 8,
+    "name": "National LIbrary of Ireland",
+    "lat": 53.33799865,
+    "lon": -6.252665656
+  },
+  {
+    "num": 9,
+    "name": "Grafton Street",
+    "lat": 53.33816531,
+    "lon": -6.256165642
+  },
+  {
+    "num": 10,
+    "name": "Olympia Theatre",
+    "lat": 53.3389864,
+    "lon": -6.259665628
+  },
+  {
+    "num": 11,
+    "name": "Christ Church Cathedral",
+    "lat": 53.33916531,
+    "lon": -6.269498922
+  },
+  {
+    "num": 12,
+    "name": "Natural History Museum",
+    "lat": 53.33976,
+    "lon": -6.252997
+  },
+  {
+    "num": 13,
+    "name": "Guinness Brewery",
+    "lat": 53.33999864,
+    "lon": -6.28666552
+  },
+  {
+    "num": 14,
+    "name": "Trinity College Dublin",
+    "lat": 53.33999864,
+    "lon": -6.25499898
+  },
+  {
+    "num": 15,
+    "name": "Temple Bar",
+    "lat": 53.3406653,
+    "lon": -6.257665636
+  },
+  {
+    "num": 16,
+    "name": "National Gallery of Ireland",
+    "lat": 53.340914,
+    "lon": -6.252554
+  },
+  {
+    "num": 17,
+    "name": "Jamson Irish Whiskey",
+    "lat": 53.34235696,
+    "lon": -6.272600576
+  },
+  {
+    "num": 18,
+    "name": "Dublin Castle",
+    "lat": 53.343109,
+    "lon": -6.267394
+  },
+  {
+    "num": 19,
+    "name": "Spire of Dublin",
+    "lat": 53.34316529,
+    "lon": -6.256165642
+  },
+  {
+    "num": 20,
+    "name": "River Liffey",
+    "lat": 53.3499986,
+    "lon": -6.2166658
+  },
+  {
+    "num": 21,
+    "name": "Dublin Zoo",
+    "lat": 53.35233192,
+    "lon": -6.302332124
+  },
+  {
+    "num": 22,
+    "name": "Phoenix Park",
+    "lat": 53.35599858,
+    "lon": -6.32166538
+  },
+  {
+    "num": 23,
+    "name": "Howth Head",
+    "lat": 53.37923,
+    "lon": -6.07201
+  }
+]

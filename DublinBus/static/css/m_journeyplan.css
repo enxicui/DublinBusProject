@@ -1,0 +1,210 @@
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+#myholder{
+    color: black;
+    background: white;
+}
+.div.col-3{
+    padding-left: 5px;
+    padding-right: 0px;
+    height: 5vh;
+}
+
+.container-fluid{
+    /* height: 20vh; */
+}
+
+.col-10.col{
+    background: purple;
+    padding: 5px;
+}
+
+#map.col-12{
+height: 40vh;
+background: black;
+width: 100%;
+}
+.html{
+    padding-right: 0px;
+}
+
+#map{
+    height: 40vh;
+    width: 100%;
+}
+#choices{
+    color: black;
+    background: white;
+    padding: 20px;
+}
+div#choices{
+    background-color: navy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn.btn-primary.btn-lg{
+background-color: pink;
+}
+#accordion{
+    overflow-y: scroll;
+    color: red;
+    width: 100%;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    margin-left: 15px;
+}
+
+#footer{
+    height: 15vh;
+}
+
+button.btn.btn-link{
+    color: rgba(4, 36, 85, 0.5);
+}
+div.card-header{
+    color: black;
+}
+div.card-body{
+    padding: 30px;
+}
+
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#origin-input,
+#destination-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    height: auto;
+    width: auto;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+#origin-input:focus,
+#destination-input:focus {
+    border-color: #4d90fe;
+}
+
+#mode-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    margin-left: 12px;
+    padding: 5px 11px 0px 11px;
+}
+
+#mode-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+
+.input-block {
+    padding: 20px;
+    height: 40vh;
+
+  }
+
+ .lowerblock{
+
+ }
+#collapseblock{
+    height: 35vh;
+}
+
+  #collapseAbove{
+      padding: 20px;
+  }
+
+  .checkbox{
+      padding: 10px;
+      display: none;
+  }
+
+  #footer-div{
+      padding: 0px;
+      margin-top: 0px;
+      height: 15vh;
+  }
+
+  #footer-tab.col-12{
+      /* height: 15vh; */
+      margin-top: 0px;
+      margin: 0px;
+      padding: 0px;
+  }
+
+  #footer-nav{
+    background:  rgb(134, 131, 131);
+    /* padding-top: 15%; */
+    /* height: 15vh; */
+    border-style: solid;
+    border-top: 4px;
+    border-bottom: 0px;
+    border-width: 1px;
+    border-color: white;
+    color:  rgb(212, 209, 209);
+    font-family: 'Roboto';
+  
+  }
+  
+  .nav-link{
+    color: white;
+    padding-top: 2px;
+  }
+
+
+  .nav nav-pills nav-justified{
+    padding: 0px;
+    background: green;
+    margin: 0px;
+    width: 100%;
+    }
+
+#datepicker,
+.ui-datepicker,
+.ui-datepicker-header,
+.ui-datepicker-calendar {
+    width: 500px;
+}
+.ui-datepicker-calendar {
+    background: dodgerblue;
+}
+.ui-datepicker-header {
+    text-align: center;
+    color: #fff;
+    background: #000;
+}
+.ui-datepicker-prev {
+    float: left;
+}
+.ui-datepicker-next {
+    float: right;
+}

@@ -1,0 +1,34 @@
+p{
+    color: white;
+    margin-top: 2vh;
+}
+
+.container-fluid{
+    height:90vh;
+}
+
+.nav-link {
+    color: white;
+}
+
+#footer-nav {
+    background: rgb(134, 131, 131);
+    height: 12vh;
+    line-height: 2vh;
+    border-style: solid;
+    border-top: 4px;
+    border-bottom: 0px;
+    border-width: 1px;
+    border-color: white;
+    color: rgb(212, 209, 209);
+    font-family: Arial;
+}
+
+#holder-row{
+    margin: 10px;
+    padding: 20px;
+    font-size: 3vh;
+
+}
+
+

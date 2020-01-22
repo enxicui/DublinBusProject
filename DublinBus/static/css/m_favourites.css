@@ -1,0 +1,202 @@
+/* .controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+} */
+
+#middle-favourite{
+    background: white;
+    width: 100%;
+    height: 80vh;
+    /* padding: 5%; */
+}
+
+.container-fluid{
+    font-family: 'News Cycle', sans-serif;
+
+}
+
+#favourite-holder{
+
+    /* margin: 20px; */
+    background-color: white;
+    margin-left: 4%;
+    margin-top: 2%;
+    height: auto;
+    width: 94%;
+}
+#favourite-Add{
+    background-color: white;
+    width: 100%;
+    height: 8vh;
+    padding: 10px;
+    display: block;
+}
+
+#favourite-Input{
+    background-color: white;
+    width: 100%;
+    height: 10vh;
+    /* padding: 50px; */
+    /* margin-top : 100px; */
+    display:none;
+}
+#origin-input{
+    /* width: 50%; */
+    font-size: 70%;
+}
+#destination-input{
+    width: 60%;
+    font-size: 70%;
+
+}
+#add-holder{
+    background-color: gainsboro;
+    border-radius: 15px;
+    padding: 5px;
+    padding-top: 7px;
+    font-size: 3vh;
+    text-align: center;
+    /*padding-left: 15%;*/
+  /* height: 100%; */
+  line-height:5vh;
+}
+
+#input-holder{
+    background-color: gainsboro;
+    border-radius: 15px;
+    padding: 5px;
+    padding-top: 3%;
+    /* margin-top: 100px */
+    font-size: 3vh;
+
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 4%;
+
+    text-align: center;
+    padding-left: 10%;
+
+  /* height: 100%; */
+  line-height:5vh;
+  height: 30vh;
+}
+
+#plusicon{
+    text-align: center;
+    color: #353b48;
+    font-size: 5vh;}
+
+#add-button{
+    border-radius: 50%;
+    text-align: center;
+    background-color: gainsboro;
+    border-color: gainsboro;
+}
+
+.btn.btn-primary{
+    size: 50px;
+    /* margin-left: 50%; */
+}
+
+.flex-container{
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    background-color: rgba(2, 147, 222, 0.5);
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 50%;
+    text-align: center;
+    height: auto;
+    line-height:5vh;
+
+}
+#one-holder{
+    /* background-color: rgba(2, 147, 222, 0.5);
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 50%;
+    width: 100%;
+
+    text-align: center;
+  height: 10vh;
+  line-height:5vh;
+*/
+  display:none;
+}
+
+#flex1div{
+    width: 70%;
+    padding-top:1.5vh;
+    font-size: 2vh;
+    text-align: center;
+
+}
+
+#flex2div{
+    /* width: 25%; */
+    padding-top: 1.5vh;
+    font-size: 4vh;
+    text-align: center;
+
+}
+
+#planJourney{
+    border-radius: 20px;
+    height: 6vh;
+    width: 13vh;
+    font-size: 30px;
+
+}
+
+#addfavourite{
+    border-radius: 20px;
+    width: auto;
+    margin-top: 2%;
+
+}
+form {
+    width: 100%;
+    /*background-color: gainsboro;*/
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+
+  .field-wrap {
+    width: 100%;
+    /* margin-bottom: 10px; */
+    display: flex;
+  }
+  .field-wrap input {
+    width: 100%;
+    flex-grow: 1;
+  }
+  label {
+    margin-right: 10px;
+    /* width: 110px; */
+  }
+
+
+
+
+#submitbutton{
+    padding: 10px;
+    text-align:right;
+    padding-right: 15%;
+}
+
+#box {
+    display: flex;
+  }
+
+#field-wrap{
+    padding: 10px;
+}

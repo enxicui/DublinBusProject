@@ -1,0 +1,244 @@
+div.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding: 0px;
+    width: 100%;
+
+}
+
+#mobile-nav {
+    position: fixed;
+    right: 0;
+    bottom: 8%;
+    left: 0;
+    z-index: 1030;
+}
+
+.navigation_bar {
+    display: block;
+    text-align: center;
+    margin-left: 9%;
+    margin-right: 9%;
+    padding-top: 0;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 16%;
+}
+
+.nav-tabs {
+    height: 20% !important;
+    border-bottom: none !important;
+    list-style-type: none;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    font-family: Arial;
+    min-width: 1000px;
+    position: relative;
+    vertical-align: middle;
+}
+
+/*border-bottom: 2px solid red !important;*/
+
+.nav {
+    background: transparent !important;;
+    height: 7vh !important;
+    width: 100%;
+    padding: 0px;
+    /*margin: 0px;*/
+
+}
+
+#navi {
+    height: 10%;
+    display: block;
+    text-align: center;
+    padding-top: 0;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 35%;
+}
+
+/*.navi a:link, .navi a:visited*/
+/*{*/
+/*display: block;*/
+/*text-align: center;*/
+/*font-weight: bold;*/
+/*color:azure;*/
+/*width: 160px;*/
+/*background-color:darkslategray;*/
+/*height:60px;*/
+/*text-decoration: none;*/
+/*padding-top: 15%;*/
+
+
+/*}*/
+/*.navi a:hover, .navi a:active*/
+/*{*/
+/*background-color:cadetblue*/
+/*}*/
+
+body, html {
+    height: 100vh;
+    /* width: 100%; */
+    margin: 0;
+    padding: 0;
+    background: rgba(2, 147, 222, 0.5) !important;
+    /* opacity: 0.5; */
+    font-family: Arial;
+
+}
+
+.row {
+    margin: auto;
+}
+
+div.col-12 {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+div.col-3 {
+    height: 7vh;
+    padding-right: 0px;
+    padding-top: 0px;
+    /* padding: 0px; */
+}
+
+div.col-6 {
+    padding: 0px;
+    text-align: center;
+}
+
+/* Header styles */
+
+#header-row {
+    height: 10vh;
+    background: rgba(4, 36, 85, 0.5);
+    padding: 0px;
+    line-height: 6vh;
+    font-size: 4vh;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+}
+
+.smalllogo {
+    height: 10vh;
+    width: 10vh;
+    line-height: 10vh;
+}
+
+
+/* search bar styles */
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 5vh;
+    background-color: #353b48;
+    border-radius: 30px;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 5vh;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input {
+    padding: 0 10px;
+    width: 450px;
+    caret-color: #042455;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+    background: white;
+    color: #042455;
+}
+
+.search_icon {
+    height: 5vh;
+    width: 5vh;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+}
+
+
+/* Nav bar used for tabs (nav-pills) at bottom */
+
+
+.nav nav-pills {
+    margin-left: 0px;
+    padding: 0px;
+    border-radius: .0rem;
+    margin-right: 0px;
+}
+
+.navbar {
+    background: green;
+    height: 5vh;
+}
+
+.nav {
+    padding: 0px;
+    background: purple;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+.nav nav-pills nav-justified {
+    padding: 0px;
+    background: purple;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+#footer-nav {
+    background: rgb(134, 131, 131);
+    height: 12vh;
+    border-style: solid;
+    border-top: 4px;
+    border-bottom: 0px;
+    border-width: 1px;
+    border-color: white;
+    color: rgb(212, 209, 209);
+    font-family: Arial;
+}
+
+.nav-link {
+    color: white;
+
+
+}
+
+
+
+.icon-container {
+    text-align: center;
+    font-size: 1.5vh;
+}
+
+#myicon {
+    font-size: 4vh;
+    padding-top: 2vh;
+}
