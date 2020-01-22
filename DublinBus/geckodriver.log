@@ -1,0 +1,563 @@
+1565281485399	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.mtyPemSVgDVx"
+1565281486710	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565281486711	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565281486711	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565281486711	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565281489943	Marionette	INFO	Listening on port 53723
+1565281489971	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565281518603	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.LsXLKJtPMtZh"
+1565281519427	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565281519428	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565281519428	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565281519428	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565281522050	Marionette	INFO	Listening on port 53868
+1565281522099	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: resource:///modules/UrlbarView.jsm, line 123: Array.reduce is deprecated; use Array.prototype.reduce instead
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+1565281672645	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.FuL2iMlQyWDp"
+1565281673946	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565281673947	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565281673947	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565281673947	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565281676607	Marionette	INFO	Listening on port 54283
+1565281676671	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565281694573	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.BHcOttSWr9sQ"
+1565281695459	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565281695459	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565281695460	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565281695460	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565281697911	Marionette	INFO	Listening on port 54395
+1565281698000	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565281718217	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.W5scx78Rqio8"
+1565281719211	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565281719211	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565281719211	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565281719211	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565281721710	Marionette	INFO	Listening on port 54502
+1565281721815	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+1565281762894	Marionette	INFO	Stopped listening on port 54283
+1565281764703	Marionette	INFO	Stopped listening on port 54395
+1565281766385	Marionette	INFO	Stopped listening on port 54502
+1565281770764	Marionette	INFO	Stopped listening on port 53868
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565222410127%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+1565688221378	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.8CULgbsXPgQD"
+1565688222397	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565688222397	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565688222398	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565688222398	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565688225385	Marionette	INFO	Listening on port 58466
+1565688225433	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+1565688312134	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.UeW6q36PpEAB"
+1565688312798	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565688312798	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565688312798	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565688312798	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565688315201	Marionette	INFO	Listening on port 59081
+1565688315235	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+1565688847591	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.iLu0btCNc4Pf"
+1565688848210	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565688848210	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565688848211	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565688848211	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565688850735	Marionette	INFO	Listening on port 62158
+1565688850779	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565654482633%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565654482633%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565654482633%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+1565689002044	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.1hzE4ZIwxmfA"
+1565689002760	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689002761	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689002761	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689002761	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689005161	Marionette	INFO	Listening on port 63109
+1565689005215	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+1565689008200	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.6jNzBYXf3eAc"
+1565689009072	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689009073	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689009073	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689009073	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689012347	Marionette	INFO	Listening on port 63209
+1565689012519	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565689056236	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.pJzZdYggzaxN"
+1565689057279	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689057280	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689057280	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689057280	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689059626	Marionette	INFO	Listening on port 63532
+1565689059725	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+1565689062941	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.0QIsY0SjTrkc"
+1565689063829	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689063829	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689063830	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689063830	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689067166	Marionette	INFO	Listening on port 63644
+1565689067323	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565689076312	Marionette	INFO	Stopped listening on port 63532
+1565689076466	Marionette	INFO	Stopped listening on port 63644
+1565689079600	Marionette	INFO	Stopped listening on port 62158
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1565689082709	Marionette	INFO	Stopped listening on port 59081
+1565689084097	Marionette	INFO	Stopped listening on port 58466
+1565689295908	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.e3qRn0hFZfRd"
+1565689296487	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689296488	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689296488	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689296488	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689298691	Marionette	INFO	Listening on port 65016
+1565689298792	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+1565689301332	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.0rhjLv9evyJz"
+1565689302339	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689302340	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689302340	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689302340	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689304723	Marionette	INFO	Listening on port 65111
+1565689304805	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565689307858	Marionette	INFO	Stopped listening on port 65111
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1565689475513	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.2OcZZCBof6ag"
+1565689476104	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689476104	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689476104	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689476104	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689478532	Marionette	INFO	Listening on port 49787
+1565689478589	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+1565689481184	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.y7IhEeXryDxr"
+1565689482103	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689482103	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689482103	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689482103	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689484515	Marionette	INFO	Listening on port 49890
+1565689484572	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565689488247	Marionette	INFO	Stopped listening on port 49890
+1565689535268	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.lLQa0Bfl3KRU"
+1565689535889	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689535890	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689535890	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689535890	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689538218	Marionette	INFO	Listening on port 50275
+1565689538249	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565689539731	Marionette	INFO	Stopped listening on port 50275
+1565689764385	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.iGWaF6o4P4Q3"
+1565689764982	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689764982	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689764982	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689764982	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689767341	Marionette	INFO	Listening on port 51628
+1565689767360	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565689769607	Marionette	INFO	Stopped listening on port 51628
+1565689792219	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.42K4JpDlJAhd"
+1565689792844	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689792845	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689792845	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689792845	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689795164	Marionette	INFO	Listening on port 51863
+1565689795186	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565689797154	Marionette	INFO	Stopped listening on port 51863
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1565689851844	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.jPGXV4C026aa"
+1565689852405	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689852405	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689852405	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689852406	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689854616	Marionette	INFO	Listening on port 52271
+1565689854711	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565689856620	Marionette	INFO	Stopped listening on port 52271
+1565689895161	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.z57KOnV4Whjt"
+1565689895844	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689895844	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689895845	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689895845	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689898139	Marionette	INFO	Listening on port 52590
+1565689898233	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565689900835	Marionette	INFO	Stopped listening on port 52590
+1565689934201	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.NLheUpLdJLJX"
+1565689934775	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565689934776	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565689934776	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565689934776	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565689937149	Marionette	INFO	Listening on port 52886
+1565689937164	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565689938971	Marionette	INFO	Stopped listening on port 52886
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565654482633%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565654482633%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+1565690371532	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.5AYjTx4zzkYa"
+1565690372166	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565690372167	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565690372167	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565690372167	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565690374465	Marionette	INFO	Listening on port 55365
+1565690374506	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565690376292	Marionette	INFO	Stopped listening on port 55365
+1565690407651	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.GC8mrQcoq1gM"
+1565690408339	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565690408339	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565690408340	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565690408340	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565690410509	Marionette	INFO	Listening on port 55651
+1565690410522	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565690412696	Marionette	INFO	Stopped listening on port 55651
+1565690821377	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.SINNcNyIx11u"
+1565690821973	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565690821974	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565690821974	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565690821974	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565690824289	Marionette	INFO	Listening on port 58064
+1565690824348	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565690826733	Marionette	INFO	Stopped listening on port 58064
+1565690847187	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.xADyAXpm9SlY"
+1565690847781	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565690847781	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565690847781	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565690847781	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565690849989	Marionette	INFO	Listening on port 58294
+1565690850049	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565690852134	Marionette	INFO	Stopped listening on port 58294
+1565690923153	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.KV6UHorZmEps"
+1565690923812	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565690923813	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565690923813	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565690923813	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565690926214	Marionette	INFO	Listening on port 58801
+1565690926230	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565690928463	Marionette	INFO	Stopped listening on port 58801
+1565693707128	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.i8IPLP6Yfzma"
+1565693708020	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565693708020	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565693708020	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565693708020	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565693710713	Marionette	INFO	Listening on port 58258
+1565693710732	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565693713445	Marionette	INFO	Stopped listening on port 58258
+1565693760564	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.MXVlyFxgx9AM"
+1565693761184	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565693761185	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565693761185	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565693761185	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565693763473	Marionette	INFO	Listening on port 58642
+1565693763558	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565693765992	Marionette	INFO	Stopped listening on port 58642
+1565693790963	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.huboBOm7FRfa"
+1565693791613	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565693791613	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565693791613	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565693791613	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565693793976	Marionette	INFO	Listening on port 58889
+1565693794066	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565693796367	Marionette	INFO	Stopped listening on port 58889
+[Child 17923, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 727
+1565693866932	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.JtsX1G14MnxR"
+1565693867903	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565693867904	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565693867905	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565693867905	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565693870668	Marionette	INFO	Listening on port 59396
+1565693870743	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565693873230	Marionette	INFO	Stopped listening on port 59396
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000E,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3500BC,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+1565693963015	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.j4Z2AnEZPTq3"
+1565693963747	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565693963748	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565693963748	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565693963748	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565693966408	Marionette	INFO	Listening on port 60016
+1565693966427	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565693969850	Marionette	INFO	Stopped listening on port 60016
+1565694153374	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.fKsuGxIw0R7w"
+1565694154213	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694154213	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694154214	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694154214	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694157128	Marionette	INFO	Listening on port 61255
+1565694157214	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694159547	Marionette	INFO	Stopped listening on port 61255
+1565694188575	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.h5uWzdRleslz"
+1565694189345	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694189345	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694189345	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694189346	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694191929	Marionette	INFO	Listening on port 61550
+1565694191998	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694194961	Marionette	INFO	Stopped listening on port 61550
+1565694204700	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.kduayR28YZh7"
+1565694205438	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694205438	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694205438	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694205438	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694208008	Marionette	INFO	Listening on port 61725
+1565694208026	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694210391	Marionette	INFO	Stopped listening on port 61725
+1565694270722	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.V9bZg8BhNai4"
+1565694271430	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694271431	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694271431	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694271431	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694273972	Marionette	INFO	Listening on port 62182
+1565694274024	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694276585	Marionette	INFO	Stopped listening on port 62182
+1565694513214	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.bEmSs92yPP4X"
+1565694513932	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694513932	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694513932	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694513932	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694516549	Marionette	INFO	Listening on port 63633
+1565694516570	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694519647	Marionette	INFO	Stopped listening on port 63633
+JavaScript error: https://maps.googleapis.com/maps-api-v3/api/js/37/10a/common.js, line 76: NS_ERROR_NOT_INITIALIZED: 
+1565694543550	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.uwOHzO0W1hXx"
+1565694544243	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694544243	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694544244	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694544244	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694546691	Marionette	INFO	Listening on port 63885
+1565694546744	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694549179	Marionette	INFO	Stopped listening on port 63885
+1565694583495	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.fL3d4n0T7rMd"
+1565694584145	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694584146	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694584147	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694584147	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694586491	Marionette	INFO	Listening on port 64188
+1565694586587	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694589058	Marionette	INFO	Stopped listening on port 64188
+1565694606919	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.r2mFqvJSUqRa"
+1565694607559	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694607559	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694607560	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694607560	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694609937	Marionette	INFO	Listening on port 64404
+1565694610034	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694612228	Marionette	INFO	Stopped listening on port 64404
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x53000E,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3500BC,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+1565694685366	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.FRP9WnwR2g66"
+1565694686204	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694686204	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694686204	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694686205	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694688733	Marionette	INFO	Listening on port 64932
+1565694688796	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694691786	Marionette	INFO	Stopped listening on port 64932
+1565694854902	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.VLs6oDmh1n4Q"
+1565694855517	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694855517	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694855517	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694855517	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694857990	Marionette	INFO	Listening on port 49588
+1565694858006	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694860870	Marionette	INFO	Stopped listening on port 49588
+1565694936592	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.lqgmCEQStRTR"
+1565694937223	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565694937223	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565694937223	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565694937224	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565694939647	Marionette	INFO	Listening on port 50125
+1565694939679	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565694942241	Marionette	INFO	Stopped listening on port 50125
+1565695052503	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/tx/_n4_l39j23188p_csglr_mtc0000gn/T/rust_mozprofile.zTFKu0lGv1Ju"
+1565695053378	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565695053378	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565695053378	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565695053378	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565695055988	Marionette	INFO	Listening on port 50855
+1565695056044	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js, line 6: TypeError: i is undefined
+JavaScript error: http://localhost:8000/static/js/map.js, line 59: TypeError: this.setupPlaceChangedListener is not a function
+JavaScript error: http://localhost:8000/journeyplan/, line 354: TypeError: $(...).daterangepicker is not a function
+1565695058651	Marionette	INFO	Stopped listening on port 50855
+1565698478744	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0r/_m6tpmsn0z94lzfqqk1tkkfh0000gn/T/rust_mozprofile.i8PCXbMyCRyB"
+1565698479405	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565698479405	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565698479405	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565698479406	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565698481259	Marionette	INFO	Listening on port 61401
+1565698481312	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565698481777	Marionette	INFO	Stopped listening on port 61401
+1565698509882	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0r/_m6tpmsn0z94lzfqqk1tkkfh0000gn/T/rust_mozprofile.T3tXrL0adptG"
+1565698510330	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565698510330	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565698510330	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565698510330	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565698512008	Marionette	INFO	Listening on port 61570
+1565698512036	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565698512307	Marionette	INFO	Stopped listening on port 61570
+1565698740955	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0r/_m6tpmsn0z94lzfqqk1tkkfh0000gn/T/rust_mozprofile.Qh2QHGAIzvfQ"
+1565698741420	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565698741421	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565698741421	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565698741421	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565698743489	Marionette	INFO	Listening on port 62546
+1565698743535	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565698743762	Marionette	INFO	Stopped listening on port 62546
+1565698790759	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0r/_m6tpmsn0z94lzfqqk1tkkfh0000gn/T/rust_mozprofile.iDsJYkguLxNU"
+1565698791234	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1565698791235	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1565698791235	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1565698791235	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1565698793036	Marionette	INFO	Listening on port 62808
+1565698793139	Marionette	WARN	TLS certificate errors will be ignored for this session
+1565698793334	Marionette	INFO	Stopped listening on port 62808
