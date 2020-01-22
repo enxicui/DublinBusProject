@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+
+    <head>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <script>
+            //paste this code under the head tag or in a separate js file.
+            // Wait for window load
+            $(window).onload(function () {
+                // Animate loader off screen
+                $(".se-pre-con").fadeOut("slow");
+            });
+        </script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://kit.fontawesome.com/a7c1f97ec0.js"></script>
+        <style>
+            /* Set the size of the div element that contains the map */
+            #map {
+                height: 80vh;
+                width: 30px;
+            }
+
+            {#https://smallenvelop.com/display-loading-icon-page-loads-completely/#}
+            .no-js #loader {
+                display: none;
+            }
+
+            .js #loader {
+                display: block;
+                position: absolute;
+                left: 100px;
+                top: 0;
+            }
+
+            .se-pre-con {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: url(../static/img/animated-bus.gif) center no-repeat #2775BA;
+            }
+
+            @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+        </style>
+
+    </head>
+
+    <body>
+    <div class="container-fluid">
+
+        <div class="row" id="header-row">
+            <div class="col-3">
+                <img src="{% static 'smalllogo.png' %}" class="smalllogo">
+            </div>
+            <div class="col-6">
+                <p style="margin-top: 5%">Dublin Bus</p>
+            </div>
+        <div style = "cursor: pointer; color:white;float: right; max-width:75px"><h6 data-toggle="modal" data-target="#myModal">Click here for tourist game info!</h6></div>
+            <div class="col-3">
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <!-- <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit">Submit</button>
+                        </form> -->
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12" id="map"></div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                {% include 'tabs.html' %}
+
+            </div>
+
+        </div>
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Game Information</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Hello there! Whether you're new to Dublin, or a South Dublin girl who went to Mount Anville and
+                        knows nothing but Dublin, we bet there's some places you haven't visited yet. If you look
+                        around the map on the homepage, you'll notice purple markers that look different than the orange station markers.
+                        These are what we believe to be the best spots in Dublin, and there's 20 spread out across
+                        the map. For every one you visit, we'll give you 10 points. And for every 50 points you earn, we'll
+                        exchange that for 5 Euro of Dublin Bus credit. Now get exploring!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+        <script>
+            var user = '{{ user.username }}';
+            window.setInterval(function () {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var locations = '{{ user.places_visited }}';
+                        if (locations.length > 0) {
+                            var favsArray = locations.split('*');
+                        } else {
+                            favsArray = [];
+                        }
+                        pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                        for (var i = 0; i < tourism.length; i++) {
+                            var checkLat = tourism[i].latitude;
+                            var checkLong = tourism[i].longitude;
+                            if (distance(position.coords.latitude, position.coords.longitude, checkLat, checkLong) < 0.1 && favsArray.includes(date[i].name) == false) {
+                                alert("Nice job! You visited " + tourism[i].name + " and earned 10 points! Keep exploring!");
+                                tourismXHTTP = new XMLHttpRequest();
+                                tourismXHTTP.open("POST", '/users/addLocation/');
+                                tourismXHTTP.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+                                tourismXHTTP.send("location=" + tourism[i].name + "&points=10+&user=" + user);
+                                var returnData = this.responseText;
+                                if (returnData == 400) {
+                                    alert("There was an error on the server side of things. Try again!")
+                                }
+                            }
+                        }
+                    })
+                }
+            }, 60000);
+        </script>
+    {% endif %}
+    <script>
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");
+            ;
+        });
+    </script>
+    <script>
+        var data = {{ load | safe }};
+        var route_data =
+        {{ routedata | safe }}
+        var tourism = {{tourismData | safe }};
+    </script>
+    <script src="{% static 'js/initmap.js' %}"></script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-hR-mSsuP9TGDFilrtWVmxNR_t1i-qYo&callback=initMap">
+    </script>
+
+
+    </body>
+{% endblock %}

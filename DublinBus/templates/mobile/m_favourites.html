@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<div class="row" id="header-row">
+    <div class="col-3">
+        <img src="{% static 'smalllogo.png' %}" class="smalllogo">
+    </div>
+    <div class="col-6">
+        <p style="margin-top: 5%">Dublin Bus</p>
+    </div>
+        <div style = "cursor: pointer; color:white;float: right; max-width:75px"><h6 data-toggle="modal" data-target="#myModal">Click here for tourist game info!</h6></div>
+
+</div>
+<div class="row">
+
+    <div class="col-12" id="footer-div">
+
+        {% include 'tabs.html' %}
+
+    </div>
+
+</div>
+{% if user.is_authenticated %}
+
+<script>
+    var user = '{{ user.username }}';
+    var favs = '{{ user.favourites }}';
+</script>
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvFaUDR5Wnl172znC5agS97gPJmyXHwOs&libraries=places&callback=initMap">
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+        type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+        type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+
+<script>
+    function setAutocomplete() {
+        var originInput = document.getElementById('origin-input');
+        var destinationInput = document.getElementById('destination-input');
+        //define a center and circle for our autocomplete search, this makes it so that it's biased toward this area when
+        //searching for a place name
+        var center = new google.maps.LatLng(53.33306, -6.24889);
+        var circle = new google.maps.Circle({
+            center: center,
+            radius: 10000
+        });
+        //setting up the autcomplete and adding the bound circle of 10KM for suggestions
+        var originAutocomplete = new google.maps.places.Autocomplete(originInput);
+        var destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput);
+        originAutocomplete.setBounds(circle.getBounds());
+        destinationAutocomplete.setBounds(circle.getBounds());
+        this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+        this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+        var marker = new google.maps.Marker({position: dublin, map: map});
+    }
+</script>
+
+Hi {{ user.username }}!
+<button class='btn btn-light btn-sm'>
+    <a ; class="button;" href="{% url 'logout' %}" style="color: darkblue"><img
+            src="../static/img/logout-yellow.png"
+            style="height: 40px; width: 45px;"></a>
+</button>
+<div class="row" style="overflow: auto">
+    <div class="col-12" id="middle-favourite">
+        <!-- <p>middle section</p> -->
+        <div class="col-12" id="favourite-holder">
+            <div id="favourite-Add">
+                <div id="add-holder">
+                    <h3>Add new favourite route
+                        <button aria-pressed="false" autocomplete="off" class="btn btn-primary"
+                                data-toggle="button"
+                                id="add-button" type="button">
+                            <img src="../static/img/plus.png"
+                                 style="height: 32px; width: 32px; margin-top: -10%;">
+                            {# <i class="fas fa-plus-circle" id="plusicon"></i>#}
+                        </button>
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <div id="favourite-Input">
+                <div id="input-holder">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <div class="field-wrap">
+                            <label for="origin-input"> Start: </label>
+                            <input autocomplete="off" class="controls" id="origin-input" type="text">
+
+                        </div>
+                        <br>
+
+                        <div class="field-wrap">
+                            <label for="destination-input">Destination: </label>
+                            <input autocomplete="off" class="controls" id="destination-input" type="text">
+                            <script>setAutocomplete()</script>
+                        </div>
+
+                        <!-- {{ form.as_p }} -->
+                        <button class="btn btn-primary" id="addfavourite" onclick="updateUserFav(user)"
+                                type="button">Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <br>
+            <div id="one-holder" style="max-height: 420px; overflow: scroll; padding-bottom: 150px"></div>
+
+        </div>
+
+    </div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Game Information</h4>
+            </div>
+            <div class="modal-body">
+                <p>Hello there! Whether you're new to Dublin, or a South Dublin girl who went to Mount Anville and
+                    knows nothing but Dublin, we bet there's some places you haven't visited yet. If you look
+                    around the map on the homepage, you'll notice purple markers that look different than the orange station markers.
+                    These are what we believe to be the best spots in Dublin, and there's 20 spread out across
+                    the map. For every one you visit, we'll give you 10 points. And for every 50 points you earn, we'll
+                    exchange that for 5 Euro of Dublin Bus credit. Now get exploring!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        var myHtml = "";
+        if (favs.length > 0) {
+            var favsArray = favs.split('*');
+            for (var i = 0; i < favsArray.length; i++) {
+                var startStop = favsArray[i].split(':');
+                var startLoc = startStop[0];
+                var endLoc = startStop[1];
+                var startLocShort = startLoc.split(",")[0];
+                var endLocShort = endLoc.split(",")[0];
+                let startLocRem = startLoc.replace("&#39;", "4343");
+                let endLocRem = endLoc.replace("&#39;", "4343");
+                startLoc = startLoc.replace("&#39;", "");
+                endLoc = endLoc.replace("&#39;", "");
+                myHtml +=
+                    "<div class=\"flex-container\" id='" + startLocShort + endLocShort + "'>" +
+                    "<div id=\"flex1div\"> <b>From: </b>" + startLocShort + "<b> To: </b>" + endLocShort +
+                    "</div><div id=\"flex2div\" style=\"margin-left: 1%;\"><img src=\"../static/img/place.png\" " +
+                    "style=\"height: 30px; width: 30px\"; value='" + startLoc + "|" + endLoc + "' id=\"planJourney\"" +
+                    " onclick=\"getFavRoute('" + startLoc + "','" + endLoc + "')\">" + "&nbsp" + "&nbsp" + "&nbsp" +
+                    "<img src=\"../static/img/like.png\" style='height: 30px; width: 30px;' id='delete' onclick='" +
+                    "removeFav(\"" + startLocRem + "\",\"" + endLocRem + "\",\"" + user + "\")'>" +
+                    "</div>" +
+                    "</div><br>";
+            }
+            document.getElementById("one-holder").innerHTML = myHtml;
+            document.getElementById("favourite-Add").style.display = "block";
+            document.getElementById("favourite-Input").style.display = "none";
+            document.getElementById("one-holder").style.display = "block";
+        }
+    }
+</script>
+
+{% else %}
+ <a href="{% url 'm_favLogin' %}"><img src="../static/img/login-icon-yellow.png"
+                                             style="height: 40px; width: 45px;"></a>
+            <a href="{% url 'm_signup' %}"><img src="../static/img/sign-up.png"
+                                              style="height: 37px; width: 42px;"></a>
+<div class="row" id="holder-row">
+    <div class="col-12">
+        <h3 style="padding: 5%">Apologies, but you must login to use the favourites function</h3>
+    </div>
+</div>
+
+{% endif %}
+<link href="{% static 'css/m_favourites.css' %}" rel="stylesheet">
+<script src="{% static '/js/addfavourite.js' %}"></script>
+
+<script src="{% static '/js/map.js' %}"></script>
+<script src="{% static 'js/favRoute.js' %}"></script>
+
+<script src="{% static '/js/toword.js' %}"></script>
+<script src="{% static '/js/mobile_getRoute.js' %}"></script>
+<script src="{% static '/js/getLatLong.js' %}"></script>
+<script src="{% static '/js/findLocation.js' %}"></script>
+
+
+{% endblock %}

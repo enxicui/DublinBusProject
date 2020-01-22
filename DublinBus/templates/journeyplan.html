@@ -1,0 +1,376 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+
+    <head>
+        <style>
+            hr {
+                margin-top: 0rem;
+                margin-bottom: 0rem;
+                border: 0;
+                border-top-color: currentcolor;
+                border-top-style: none;
+                border-top-width: 0px;
+                border-top: 1px solid rgba(0, 0, 0, .1);
+            }
+
+            #map {
+                height: 73vh;
+                width: 10px;
+            }
+
+            .controls {
+                margin-top: 10px;
+                border: 1px solid transparent;
+                border-radius: 8px;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                height: 40px;
+                width: 250px;
+                outline: none;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            }
+
+            #origin-input,
+            #destination-input {
+                background-color: #fff;
+                font-family: Arial;
+                font-size: 15px;
+                font-weight: 300;
+                padding: 0 11px 0 13px;
+                text-overflow: ellipsis;
+                width: 200px;
+            }
+
+            #origin-input:focus,
+            #destination-input:focus {
+                border-color: #4d90fe;
+            }
+
+            #head {
+                height: 15%;
+                width: auto;
+                text-align: center;
+            }
+
+            #mode-selector {
+                color: #fff;
+                background-color: #4d90fe;
+                margin-left: 12px;
+                padding: 5px 11px 0px 11px;
+            }
+
+        #coTwo {
+            position: absolute;
+            max-width: 600px;
+            z-index: 99;
+            text-align: center;
+            font-family: Arial;
+            background: whitesmoke;
+            height: auto !important;
+            border-radius: 25px;
+            color: darkgreen;
+            font-weight: bold;
+        }
+            #mode-selector label {
+                font-family: Arial;
+                font-size: 13px;
+                font-weight: 300;
+            }
+
+            #wrapper {
+                position: relative;
+            }
+
+            #options {
+                position: absolute;
+                left: 1%;
+                z-index: 99;
+                background: rgba(255, 255, 255, 0.7);
+                height: 300px;
+                border-radius: 25px;
+                border: 2px solid #17a2b8;
+                margin-top: 5%;
+            }
+
+            #directions {
+                position: absolute;
+                z-index: 99;
+                background: lightblue;
+                opacity: 0.7;
+                height: 60% !important;
+                border-radius: 25px;
+                max-width: 20%;
+                border: 2px solid #17a2b8;
+                margin-top: 5%;
+                left: 79%;
+                color: black;
+            }
+
+            #coTwo {
+                position: absolute;
+                z-index: 99;
+                text-align: center;
+                font-family: Arial;
+                background: whitesmoke;
+                opacity: 0.8;
+                height: auto !important;
+                border-radius: 25px;
+                color: darkgreen;
+                font-weight: bold;
+            }
+
+            button {
+                color: cornflowerblue !important;
+                background-color: white !important;
+                opacity: 0.8 !important;
+            }
+
+            {#https://smallenvelop.com/display-loading-icon-page-loads-completely/#}
+            .no-js #loader {
+                display: none;
+            }
+
+            .js #loader {
+                display: block;
+                position: absolute;
+                left: 100px;
+                top: 0;
+            }
+
+            .se-pre-con {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: url(../static/img/animated-bus.gif) center no-repeat #2775BA;
+            }
+        </style>
+
+    </head>
+
+    <body>
+    <div id="head" style="background: rgba(4, 36, 85, 0.5); padding-top: 1%">
+        <img class="smalllogo" src="{% static 'smalllogo.png' %}" style="display: inline">
+        <h2 style="display: inline">Dublin Bus</h2>
+        <div style = "cursor: pointer; color:white;float: right; max-width:150px"><h6 data-toggle="modal" data-target="#myModal">Have you been playing our game? If not, click here to learn more!</h6></div>
+    </div>
+    <div>
+        {% include 'header.html' %}
+    </div>
+    <div class="row dynamic-columns" id=wrapper>
+
+
+        <div id='options' style="overflow: scroll; width:300px">
+            <div id='journeyPlan' style='display:none'>
+                <h5 style="text-align: center; padding-top: 15%">Start your journey here!</h5>
+                <br>
+                <div style="text-align: center">
+
+                    <input autocomplete="off" class="controls" id="origin-input" placeholder="Enter a starting point"
+                           style="text-align: center"
+                           type="text">
+
+                    <input autocomplete="off" class="controls" id="destination-input"
+                           placeholder="Enter a destination"
+                           style="text-align: center"
+                           type="text">
+
+                </div>
+                <br>
+                <div style="text-align: center">
+                    <button class='btn btn-primary' id="directionsButton" onclick="buildDateTime()" style='width: 200px;'
+                            type="submit">Next
+                    </button>
+                </div>
+                <br>
+                <div style="text-align: center">
+                    <button class='btn btn-primary' id="locationButton" onclick="findLocation()" style='width: 200px;'
+                            type="submit">Find Stations Near Me!
+                    </button>
+                </div>
+                <br>
+
+                <br>
+                <br>
+                <div style="text-align: center">
+                    <button class='btn btn-primary' onclick="hideOptions()" style='width: 200px;' type="submit">Hide Options
+                        ^
+                    </button>
+                </div>
+            </div>
+            <div id='timeDate' style='display:none'>
+                <h5 style="text-align: center; padding-top: 15%">Enter a time and date!</h5>
+                <div style='text-align: center'>
+                    <input class='controls' id='dateField' name='daterange' style='width:250px' type='text'>
+                    <input autocomplete='off' class='controls' id='timepicker1' placeholder='Please select a time'
+                           style='width:250px' type='text'>
+                    <br>
+                    <br>
+                    <button class='btn btn-primary' id="directionsButton2" onclick="resizeMap()" type="submit">Search
+                    </button>
+                </div>
+            </div>
+            <div id='searchOnly' style='display:block'>
+                <div style="text-align: center">
+                    <h5 style="padding-top: 15%;">Search for a place in Dublin to visit!</h5>
+                    <input autocomplete="off" class="controls" id="pac-input" placeholder="Search Dublin"
+                           style='width: 200px;' type="text">
+                </div>
+                <br>
+                <div style="text-align: center">
+                    <button class='btn btn-primary' id="optionsButton" onclick="showOptions()"
+                            style='width: 200px;' type="submit">Show Journey Planner
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 col" id='directions' style="display:none; overflow:scroll">
+        </div>
+        <div id='coTwo'>
+        </div>
+        <div class="col-12 col;">
+            <div id="map" style="width:100%;height:800px;"></div>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Game Information</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Hello there! Whether you're new to Dublin, or a South Dublin girl who went to Mount Anville and
+                        knows nothing but Dublin, we bet there's some places you haven't visited yet. If you look
+                        around the map on the homepage, you'll notice purple markers that look different than the orange station markers.
+                        These are what we believe to be the best spots in Dublin, and there's 20 spread out across
+                        the map. For every one you visit, we'll give you 10 points. And for every 50 points you earn, we'll
+                        exchange that for 5 Euro of Dublin Bus credit. Now get exploring!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    <script>
+        var user = '{{ user.username }}' ;
+    </script>
+    {% endif %}
+    <script>
+        var map;
+        var startLat;
+        var startLong;
+        var destLat;
+        var destLong;
+        markers = [];
+        var busPath;
+        var myPath;
+        var depTime;
+        var arrTime;
+        var LocationWindow;
+        var polylines = [];
+        var snappedCoordinates = [];
+        var placeIdArray = [];
+        var stopData = {{ load | safe }};
+        var closest;
+    </script>
+
+    <script>
+        window.onload = function () {
+            var url = new URL(window.location.href);
+            var arr = window.location.href.split('?');
+            if (arr.length > 1 && arr[1] !== '') {
+                document.getElementById("optionsButton").click();
+                var passedStart = url.searchParams.get("start");
+                var passedEnd = url.searchParams.get("end");
+                document.getElementById("origin-input").value = passedStart;
+                document.getElementById("destination-input").value = passedEnd;
+                document.getElementById("directionsButton").click();
+                history.pushState(null, '', '/journeyplan/');
+                alert("We've set the start and end location, just enter a time and day!")
+            }
+            calendarBuilder();
+            $(function () {
+                $('#timepicker1').timepicker({
+                    timeFormat: 'H:i',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: true,
+                    step: 30,
+                })
+            });
+        };
+        var currentDate = new Date();
+        var endDate = new Date();
+        var numberOfDaysToAdd = 4;
+        currentDate.setDate(currentDate.getDate() + 1);
+        endDate.setDate(currentDate.getDate() + numberOfDaysToAdd);
+        function calendarBuilder() {
+            $('input[name="daterange"]').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                minDate: currentDate,
+                maxDate: endDate
+            })
+        }
+    </script>
+
+    <!--**************************************Jquery*********************************************************-->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <!--**************************************BootStrap*********************************************************-->
+    <script crossorigin="anonymous"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+
+    <!--**************************************Scripts for date/time******************************************************-->
+
+    <!-- Stylesheet for the time picker in the prediction box -->
+    <link href="https://cdn.jsdelivr.net/npm/timepicker@1.11.15/jquery.timepicker.css" rel="stylesheet">
+
+    <!-- library for the time picker in the prediction box -->
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+    <!-- Updated JavaScript url -->
+    <script src="https://cdn.jsdelivr.net/npm/timepicker@1.11.15/jquery.timepicker.js"></script>
+
+    <!--datePicker for javascript-->
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+            type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+    <!-- jQuery UI library used for time picker in the prediction box -->
+    <link href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+
+    <!--**************************************Links to local JS*********************************************************-->
+    <script src="{% static 'js/favRoute.js' %}"></script>
+    <script src="{% static 'js/autocompleteFunctions.js' %}"></script>
+    <script src="{% static 'js/changeHTML.js' %}"></script>
+    <script src="{% static 'js/mapResizeResetFunctions.js' %}"></script>
+    <script src="{% static 'js/realTimeData.js' %}"></script>
+    <script src="{% static 'js/routingFunctions.js' %}"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+    <script src="{% static 'js/getRoute.js' %}"></script>
+    <script src="{% static 'js/getLatLong.js' %}"></script>
+    <script src="{% static 'js/findLocation.js' %}"></script>
+    <script src="{% static 'js/prediction.js' %}"></script>
+    <!--**************************************Google Maps*********************************************************-->
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvFaUDR5Wnl172znC5agS97gPJmyXHwOs&libraries=places&callback=initMap">
+    </script>
+
+    </body>
+
+
+{% endblock %}
+

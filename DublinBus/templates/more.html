@@ -1,0 +1,331 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+    {% load static %}
+<script type="text/javascript" src="https://www.google.com/jsapi?key=AIzaSyC-hR-mSsuP9TGDFilrtWVmxNR_t1i-qYo">
+</script>
+
+<script type="text/javascript">
+google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
+</script>
+
+    <style>
+        .controls {
+            margin-top: 10px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            height: 30px;
+            width: 140px;
+            outline: none;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        #head {
+            height: 15%;
+            width: auto;
+            text-align: center;
+        }
+
+        #bodyblue {
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+
+        .accordion {
+        {#background-color: #b3d7ff;#} background-color: lightgrey;
+            color: green;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            font-weight: bolder;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: lightblue;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            height: 200px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        {#https://smallenvelop.com/display-loading-icon-page-loads-completely/#}
+        .no-js #loader {
+            display: none;
+        }
+
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(../static/img/animated-bus.gif) center no-repeat #2775BA;
+        }
+
+    </style>
+
+    <div class="se-pre-con"></div>
+    <div id="head" style="background: rgba(4, 36, 85, 0.5); padding-top: 1%">
+        <img class="smalllogo" style="display: inline" src="{% static 'smalllogo.png' %}">
+        <h2 style="display: inline">Dublin Bus</h2>
+        <div style = "cursor: pointer; color:white;float: right; max-width:150px"><h6 data-toggle="modal" data-target="#myModal">Have you been playing our game? If not, click here to learn more!</h6></div>
+    </div>
+
+
+    {% if user.is_authenticated %}
+    <div style="z-index: 99; height: 50px; width: 100px; position: absolute; margin-left: 88%;">
+        <h5>Hi {{ user.username }}!</h5>
+
+        <a href="{% url 'logout' %}" style="color: darkblue" ; class="button;"><img
+                src="../static/img/logout-yellow.png"
+                style="height: 40px; width: 45px;"></a>
+    </div>
+    {% else %}
+    <div style="z-index: 99; height: 50px; width: 100px; position: absolute; margin-left: 88%;">
+
+        <a href="{% url 'login' %}"><img src="../static/img/login-icon-yellow.png"
+                                         style="height: 40px; width: 45px;"></a>
+        <a href="{% url 'signup' %}"><img src="../static/img/sign-up.png"
+                                          style="height: 37px; width: 42px;"></a>
+    </div>
+    {% endif %}
+    <div>
+        {% include 'header.html' %}
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Game Information</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Hello there! Whether you're new to Dublin, or a South Dublin girl who went to Mount Anville and
+                        knows nothing but Dublin, we bet there's some places you haven't visited yet. If you look
+                        around the map on the homepage, you'll notice purple markers that look different than the orange station markers.
+                        These are what we believe to be the best spots in Dublin, and there's 20 spread out across
+                        the map. For every one you visit, we'll give you 10 points. And for every 50 points you earn, we'll
+                        exchange that for 5 Euro of Dublin Bus credit. Now get exploring!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="bodyblue">
+
+        <button class="accordion">Game</button>
+        <div class="panel"><h6>How many points have you earned?</h6>
+            {% if user.is_authenticated %}
+            <p id = 'pointsPara'></p>
+            <script>
+                var user = '{{ user.username }}';
+                var points = '{{ user.points }}';
+                if (parseInt(points,10) == 0) {
+                    document.getElementById('pointsPara').innerHTML = "<h5>0.<br>You need to work on getting some more points, " + user + ", 0 just isn't enough!";
+                }
+                else {
+                    document.getElementById('pointsPara').innerHTML = " You have earned " + points + " points. Nice job " + user + "!";
+                }
+            </script>
+            {% else %}
+            <br><p>Please log in to see your points! Haven't signed up yet? What are you waiting for? If you don't
+                sign up, you can't add favorites or earn points for exploring. You're missing out!</p>
+            {% endif %}
+        </div>
+        <button class="accordion">Co2</button>
+        <div class="panel" style = "overflow: scroll">
+            {% if user.is_authenticated %}
+            <p id = 'co2para'></p>
+            <script>
+                var random = Math.floor((Math.random() * 4) + 1);
+                var user = '{{ user.username }}';
+                var co2 = '{{ user.last_name }}';
+                var textArr = ["the amount of emissions required to provide electricity to charge 1275 smartphones.",
+                    "11 pounds of coal burned at a coal fired power plant.", "the amount of emissions to drive a car 24 miles",
+                    "the amount of emissions emitted in a gallon of diesel fuel.", "a trash bag being recycled instead of sent to a landfill."];
+                document.getElementById('co2para').innerHTML = "<br>If you took every route you looked up, you would" +
+                    " have saved " + co2/1000 + " kilograms of CO2 emissions compared to driving a car. 10 kg of" +
+                    " CO2 is the same as " + textArr[random];
+            </script>
+            {% else %}
+            <p>Please log in to see the amount of CO2 you've saved by using a bus. Where's the fun in saving the world
+                if you can't keep score?</p>
+            {% endif %}
+        </div>
+
+        <button class="accordion">Weather Forecast</button>
+        <div class="panel">
+            <h3 style="margin-top: 2%; text-align: center">Choose a date (within the next 5 days) and time to see the weather:</h3>
+            <!--this div is to show the weather forcast, input a date and choose a time to call the fuction show weather forecast in 5 days-->
+            <div class = "row">
+            <div id="search_date" style="font-family: unset; text-align: center; max-width: 400px">
+                <input type="date" name="date" id="date_weather_forcast">
+                <br>
+                <select class ='controls' id="time_weather_forcast" style="display: block; margin: 0 auto;" name="time">
+                    <option value='06:00:00'>06:00:00</option>
+                    <option value='09:00:00'>09:00:00</option>
+                    <option value='12:00:00'>12:00:00</option>
+                    <option value='15:00:00'>15:00:00</option>
+                    <option value='18:00:00'>18:00:00</option>
+                    <option value='21:00:00'>21:00:00</option>
+                    <option value='00:00:00'>00:00:00</option>
+                    <option value='03:00:00'>03:00:00</option>
+                </select>
+                <br>
+                <button style = "width:140px" class = "btn btn-primary" onclick="display()" type="button">Show forecast</button>
+            </div>
+                <br>
+            <div id="show_forecast" style="color: black; float: right; margin-bottom: 80%"></div>
+            </div>
+
+        </div>
+        <button class="accordion">Traffic Update</button>
+        <div class="panel" id="feeddiv" style = "max-height: 300px; overflow:scroll">
+            <div id="search_date" style="font-family: unset; float: left">
+                <div id="feeddiv"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- <using ajax, weather forecast function, if the date and time equals to input, get the weather forecast from openweather api -->
+
+    <script type="text/javascript">
+
+        function display() {
+            var date = $("#date_weather_forcast").val();
+            var time = $("#time_weather_forcast").val();
+
+            if (date != '' && time != '') {
+                $.ajax({
+                    url: 'https://api.openweathermap.org/data/2.5/forecast?appid=a8e1877ec087d7a2904f50a41ed61bfa&q=Dublin&units=metric',
+                    type: "GET",
+                    dataType: "jsonp",
+                    jsonpCallback: "jsonp",
+                    success: function (data) {
+                        var a = 0;
+                        for (var i = 0; i < data.list.length; i++) {
+                            if (data.list[i].dt_txt == date + ' ' + time) {
+
+                                let fore = "<img src = 'https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png' > " + data.list[i].weather[0].description +
+
+                                    "<h6 style='padding-top:0;'>" + data.list[i].main.temp + "&deg;C</h6>";
+                                document.getElementById("show_forecast").innerHTML = fore;
+                                var a = 1;
+                            }
+
+
+                        }
+                        if (a == 0) {
+                            alert("Please make sure the date is within 5 days.");
+                        }
+
+
+                    }
+
+                });
+            }
+        }
+    </script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+
+    <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
+
+    <script type="text/javascript">
+
+    google.load("feeds", "1");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("http://www.dublinbus.ie/RSS/Rss-news/");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feeddiv");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var content = entry.content;
+            var div = document.createElement("div");
+            // div.appendChild(document.createTextNode(entry.title+ "<br>"+ entry.content+"<br><br>"));
+            // div.appendChild(document.createTextNode(entry.content));
+            div.innerHTML="<br><br><h3>"+entry.title+"</h3>"+entry.publishedDate+"<br><p><a href=\""+entry.link+"\">More details</a></p><p>"+entry.content+"</p>"
+
+            container.appendChild(div);
+          }
+        }
+        else {
+            alert("Error fetching feeds!")
+            }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+    </script>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <link href="{% static 'css/more.css' %}" rel="stylesheet">
+
+    <script>
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");
+            ;
+        });
+    </script>
+
+
+<!--datePicker for javascript-->
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+        type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+<!-- jQuery UI library used for time picker in the prediction box -->
+<link href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+
+
+{% endblock %}

@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<head>
+    <style>
+
+        .autocomplete {
+            /*the container must be positioned relative:*/
+            position: relative;
+        }
+
+
+        .holder:hover {
+            background-color: #7abaff;
+        }
+
+        #head {
+            height: 15%;
+            width: auto;
+            text-align: center;
+        }
+
+        {
+            #https: / / smallenvelop . com /display-loading-icon-page-loads-completely/ #
+        }
+        .no-js #loader {
+            display: none;
+        }
+
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(../static/img/animated-bus.gif) center no-repeat #2775BA;
+        }
+    </style>
+
+    <script>
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        // $(window).load(function () {
+        // Animate loader off screen
+        //     $(".se-pre-con").fadeOut("slow");
+        //     ;
+        // });
+        //        <div class="se-pre-con"></div>
+    </script>
+</head>
+<body>
+<div id="head" style="background: rgba(4, 36, 85, 0.5); padding-top: 1%">
+    <img class="smalllogo" src="{% static 'smalllogo.png' %}" style="display: inline">
+    <h2 style="display: inline">Dublin Bus</h2>
+    <div style = "cursor: pointer; color:white;float: right; max-width:150px"><h6 data-toggle="modal" data-target="#myModal">Have you been playing our game? If not, click here to learn more!</h6></div>
+</div>
+<div>
+    {% include 'header.html' %}
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Game Information</h4>
+            </div>
+            <div class="modal-body">
+                <p>Hello there! Whether you're new to Dublin, or a South Dublin girl who went to Mount Anville and
+                    knows nothing but Dublin, we bet there's some places you haven't visited yet. If you look
+                    around the map on the homepage, you'll notice purple markers that look different than the orange station markers.
+                    These are what we believe to be the best spots in Dublin, and there's 20 spread out across
+                    the map. For every one you visit, we'll give you 10 points. And for every 50 points you earn, we'll
+                    exchange that for 5 Euro of Dublin Bus credit. Now get exploring!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<datalist id="routes">
+</datalist>
+<div id='input' style='display:block;text-align: center'>
+    <div class="autocomplete">
+        <input id="busSearch" list="routes" name="routeSearch" placeholder="Search for route.." style="width: 250px; height: 40px"
+               type="text">
+    </div>
+    <br>
+    <button class="btn btn-primary" onclick='showRoute(document.getElementById("busSearch").value)' style="width: 250px"
+            type="submit">Search
+    </button>
+</div>
+<h1 id='routeHead' style="text-align: center">A list of all bus routes:</h1>
+<br>
+<h3 id = 'blueRed' style="display: none;text-align: center">(Blue is west/southbound stops, red is east/northbound)</h3>
+<br>
+<div class="col-md-6 offset-md-3" id="bigList"
+     style="display:block;max-height:55%; overflow: scroll;text-align: center">
+    <div class="row" id="header">
+        <div class="col-12" id="route" style="text-align: center">
+        </div>
+    </div>
+</div>
+<div id="map" style="display:none; width:100%;height:60%;"></div>
+<br>
+<div id='reset' style="display:none;text-align: center">
+    <button class="btn btn-light" onclick="resetRoutes()">Back to the list</button>
+</div>
+<script>
+    var map;
+    var markers = [];
+    var routesList = {{ routesList | safe }};
+    var routeHTML = "";
+    var stopHTML = "";
+    for (var i = 0; i < routesList.length; i++) {
+        stopHTML += '<option value="' + routesList[i].Route + '">';
+        if (i % 2 == 0) {
+            routeHTML +=
+                '<div style = "background-color: white; cursor: pointer" onclick = "getRoute(\'' + routesList[i].Route + '\')" id = "' + routesList[i].Route + '" style = "cursor: pointer; text-align: center" class = "holder col-12">' +
+                routesList[i].Route + ' | ' + routesList[i].Stops +
+                '</div>';
+        }
+        else {
+            routeHTML +=
+                '<div style = "background-color:lightgray; color:black; cursor: pointer" onclick = "getRoute(\'' + routesList[i].Route + '\')" id = "' + routesList[i].Route + '" style = "cursor: pointer; text-align: center" class = "holder col-12">' +
+                routesList[i].Route + ' | ' + routesList[i].Stops +
+                '</div>';
+        }
+    }
+    document.getElementById('route').innerHTML = routeHTML;
+    document.getElementById('routes').innerHTML = stopHTML;
+
+    function showRoute(route) {
+        var html = document.getElementById(route).innerHTML;
+        var finalHtml = "<div style = 'cursor: pointer' class = 'holder' onclick = 'getRoute(\"" + route + "\")'>" + html + "</div>";
+        document.getElementById('route').innerHTML = finalHtml;
+        document.getElementById('reset').innerHTML = "<button class=\"btn btn-light\" onclick=\"resetRoutes("+0+")\">Back to the list</button>";
+
+    }
+
+    function getRoute(route) {
+        var newHttpReq = new XMLHttpRequest();
+        newHttpReq.open("POST", 'getRoute', true);
+        newHttpReq.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+        newHttpReq.send("route=" + route);
+        newHttpReq.onreadystatechange = function () {
+            var response = JSON.parse(this.responseText);
+            var dirOneRoute = response['dirOneFinal'];
+            var dirTwoRoute = response['dirTwoFinal'];
+            document.getElementById('bigList').style.display = "none";
+            document.getElementById('input').style.display = "none";
+            document.getElementById('routeHead').innerHTML = "These are all the stops the route travels through:";
+            document.getElementById('blueRed').style.display ="block";
+            document.getElementById('map').style.display = "block";
+            document.getElementById('reset').style.display = "block";
+            addMarker(1,map, dirOneRoute);
+            addMarker(2,map, dirTwoRoute);
+            map.setZoom(12);
+
+        }
+    }
+</script>
+
+
+<script>
+    function addMarker(flag,map, data) {
+        //get the stop data from JSON file
+        var infowindow = new google.maps.InfoWindow({});
+        //*
+        //*
+        for (var i = 0, length = data.length; i < length; i++) {
+            // var routedata = routedata[i]
+            var busdata = data[i];
+            // {#Console.log(busdata);#}
+            var myLatLng = {lat: parseFloat(busdata.stop_lat), lng: parseFloat(busdata.stop_lon)};
+
+            if (flag == 1) {
+                // console.log(route_data[busdata.actual_stop_id]);
+                var icon = {
+                    url: '../static/img/route1.png', // url
+                    scaledSize: new google.maps.Size(40, 40), // scaled size
+                    origin: new google.maps.Point(0, 0), // origin
+                };
+            }
+            else {
+                var icon = {
+                    url: '../static/img/route2.png', // url
+                    scaledSize: new google.maps.Size(40, 40), // scaled size
+                    origin: new google.maps.Point(0, 0), // origin
+                };
+            }
+
+            // Creating  markers and putting it on the map
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: icon,
+                title: busdata.actual_stop_id + "\n" + busdata.stop_name,
+                animation: google.maps.Animation.DROP,
+                // content is the stop info
+                content: '<div id="content' + busdata.actual_stop_id + '" >' +
+                    '<div id=stop' + busdata.actual_stop_id + '>' +
+                    "<div><img src='../static/img/bus-blue-icon.png' alt='bus-blue-icon' width='12%' height='12%'>" +
+                    '<h6 style="margin-left: 15%; font-family:Tangerine; font-size:15px;">Stop ID: ' + busdata.actual_stop_id + '</h6></div>' +
+                    '<h style="margin-left: 15%; font-family:Tangerine; font-size:15px;"><b>Stop name:</b><br>' + '<p style="margin-left: 8%">' + busdata.stop_name + '</p></h>' +
+                    '<button id="realtime" onclick="get_real_time_data2(' + busdata.actual_stop_id + ')">' +
+                    '<p id="realtime_p" style="font-family:Tangerine; font-size:12px;">Real Time Info</p>' +
+                    '</button>' +
+                    '</div>'
+
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.setContent('<div class="infowin">' + this.content + '</div>');
+                infowindow.open(map, this);
+
+            });
+            marker.setMap(map);
+            markers.push(marker);
+        }
+
+    }
+
+    function resetRoutes(flag = 1) {
+        if (flag == 1) {
+            document.getElementById('bigList').style.display = "block";
+            document.getElementById('input').style.display = "block";
+            document.getElementById('routeHead').innerHTML = "A list of all the routes:";
+            document.getElementById('blueRed').style.display ="none";
+            document.getElementById('map').style.display = "none";
+            document.getElementById('reset').style.display = 'none';
+            deleteMarkers();
+        } else {
+            for (var i = 0; i < routesList.length; i++) {
+                stopHTML += '<option value="' + routesList[i].Route + '">';
+                if (i % 2 == 0) {
+                    routeHTML +=
+                        '<div style = "background-color: white; cursor: pointer" onclick = "getRoute(\'' + routesList[i].Route + '\')" id = "' + routesList[i].Route + '" style = "cursor: pointer; text-align: center" class = "holder col-12">' +
+                        routesList[i].Route + ' | ' + routesList[i].Stops +
+                        '</div>';
+                }
+                else {
+                    routeHTML +=
+                        '<div style = "background-color:lightgray; color:black; cursor: pointer" onclick = "getRoute(\'' + routesList[i].Route + '\')" id = "' + routesList[i].Route + '" style = "cursor: pointer; text-align: center" class = "holder col-12">' +
+                        routesList[i].Route + ' | ' + routesList[i].Stops +
+                        '</div>';
+                }
+            }
+            document.getElementById('route').innerHTML = routeHTML;
+            document.getElementById('routes').innerHTML = stopHTML;
+            document.getElementById('bigList').style.display = "block";
+            document.getElementById('input').style.display = "block";
+            document.getElementById('routeHead').innerHTML = "A list of all the routes:";
+            document.getElementById('blueRed').style.display ="none";
+            document.getElementById('map').style.display = "none";
+            document.getElementById('reset').style.display = 'none';
+            deleteMarkers();
+        }
+    }
+
+    function clearMarkers() {
+        setMapOnAll(null);
+    }
+
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
+        }
+    }
+
+    //CALL THIS TO REMOVE MARKERS FROM MAP, IT USES THE OTHER MARKER RELATED FUNCTIONS!
+    function deleteMarkers() {
+        clearMarkers();
+        markers = [];
+    }
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script>
+    function initMap() {
+        var dublin = {lat: 53.33306, lng: -6.24889};
+        map = new google.maps.Map(document.getElementById('map'), {zoom: 16, center: dublin});
+        // The marker, positioned at Uluru
+        //var marker = new google.maps.Marker({position: dublin, map: map});
+        var infowindow = new google.maps.InfoWindow({});
+        var im = {
+            url: '../static/img/userLoc.png', // url
+            scaledSize: new google.maps.Size(64, 64), // scaled size
+            origin: new google.maps.Point(0, 0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+        };
+
+    }
+
+</script>
+<script src="{% static 'js/realTimeData.js' %}"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvFaUDR5Wnl172znC5agS97gPJmyXHwOs&libraries=places&callback=initMap">
+</script>
+
+</body>
+{% endblock %}

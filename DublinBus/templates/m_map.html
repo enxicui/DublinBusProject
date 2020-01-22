@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+
+    <head>
+            <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://kit.fontawesome.com/a7c1f97ec0.js"></script>
+       <style>
+            /* Set the size of the div element that contains the map */
+            #map {
+                height: 73vh;
+                width: 30px;
+            }
+           
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+        </style>
+
+    </head>
+
+    <body>
+
+    <div class="container-fluid">
+
+            <div class="row" id="header-row">
+                    <div class="col-3">
+                            <img src = "{% static 'smalllogo.png' %}" class="smalllogo">
+                    </div>
+                    <div class="col-6">
+                        <p>this is the mobile one</p>
+                    </div>
+                    <div class="col-3">
+                    </div>
+                   
+                </div>
+        <div class="row">
+            <div class="col-12">
+                {% include 'search.html' %}
+            </div>
+        </div>
+   
+
+        <div class="row">
+            <div class="col-12">
+                    <!-- <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit">Submit</button>
+                        </form> -->
+
+                    </div>
+            </div>
+
+      
+
+        <div class="row">
+            <div class="col-12" id="map"></div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                {% include 'tabs.html' %}
+
+            </div>
+
+        </div>
+    </div>
+  
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-hR-mSsuP9TGDFilrtWVmxNR_t1i-qYo&callback=initMap">
+    </script>
+        <script src="{% static 'initmap.js' %}"></script>
+        <script src="{% static 'addmarker.js' %}"></script>
+
+
+    </body>
+{% endblock %}

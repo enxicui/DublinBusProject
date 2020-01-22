@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 70vh; /* The height is 400 pixels */
+            width: 575.98px; /* The width is the width of the web page */
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            {% include 'navbar.html' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p>Map page of App
+            <p>
+        </div>
+        <div class="col-4">a</div>
+        <div class="col-4">b</div>
+    </div>
+
+    <div class="row">
+        <div class="col-12" id="map"></div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-12" id="footer">
+
+            {% include 'tabs.html' %}
+
+        </div>
+
+    </div>
+</div>
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        var dublin = {lat: 53.33306, lng: -6.24889};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 14, center: dublin});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: dublin, map: map});
+        addMarker(map)
+    };
+
+    // {console.log(data[6]);
+    function addMarker(map) {
+        //get the stop data from JSON file
+        //this line in js cannot get the JSON, but when it in html, it can get
+        // var data = {{ load | safe}};
+        for (var i = 0, length = data.length; i < length; i++) {
+            var busdata = data[i];
+            // {#Console.log(busdata);
+            var myLatLng = {lat: parseFloat(busdata.stop_lat), lng: parseFloat(busdata.stop_lon)};
+            // Creating  markers and putting it on the map
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: busdata.actual_stop_id + "\n" + busdata.stop_name,
+            });
+            marker.info = new google.maps.InfoWindow({
+                content: '<div id="content">' + '<div id="Stop_nid">' + '<p><b>Stop ID:</b>  ' + busdata.actual_stop_id + '</p>' +
+                    '<p><b>Stop name:</b><br>' + busdata.stop_name + '</p><br>' +
+                    '<div>' +
+                    '<p><b>Serving route:</b>' + '**</p>' + '</div>'
+                    + '<button id="realtime">View real time info</button>' +
+                    '</div>'
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                this.info.open(map, this);
+            })
+        }
+    }
+
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-hR-mSsuP9TGDFilrtWVmxNR_t1i-qYo&callback=initMap">
+</script>
+</body>
+{% end block %}

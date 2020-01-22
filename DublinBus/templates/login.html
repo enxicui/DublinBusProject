@@ -1,0 +1,26 @@
+ {% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div id="head"; style="background: rgba(4, 36, 85, 0.5); padding-top: 1%;  height: 15%; width: auto; text-align: center;">
+        <img class="smalllogo" style="display: inline" src="../static/smalllogo.png">
+        <h2 style="display: inline;">Dublin Bus</h2>
+    </div>
+    <div style="z-index: 99; height: 50px; width: 100px; position: absolute; margin-left: 88%;">
+
+        <a href="{% url 'login' %}"><img src="../static/img/login-icon-yellow.png"
+                                         style="height: 40px; width: 45px;"></a>
+        <a href="{% url 'signup' %}"><img src="../static/img/sign-up.png"
+                                          style="height: 37px; width: 42px;"></a>
+    </div>
+    <div>
+        {% include 'header.html' %}
+    </div>
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}

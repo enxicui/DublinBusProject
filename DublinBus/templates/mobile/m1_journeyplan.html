@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+<!--**************************************Actual Page*********************************************************-->
+
+<body>
+<div class="col-12" id="header">
+    <br>
+    <h3 style="text-align: center">Start your journey here!</h3>
+    <div style='text-align: center'>
+        <input autocomplete="off" class="controls" id="origin-input" placeholder="Starting Location"
+               onchange="placeMarker(1, document.getElementById('origin-input').value)" type="text">
+    </div>
+    <div style='text-align: center'>
+        <input autocomplete="off" class="controls" id="destination-input" placeholder="Destination"
+               onchange="placeMarker(2, document.getElementById('destination-input').value); " type="text">
+    </div>
+    <div style = 'text-align: center'>
+
+            <input style = 'width:150px' class="controls" id='dateField' name='daterange' type='text'>
+            <input style = 'width:150px' class="controls" autocomplete="off" id="timepicker1" placeholder="Please select a time" type="text">
+
+    </div>
+    <br>
+    <div style="text-align: center">
+        <button class='btn btn-primary' style = 'width:300px' id="directionsButton" onclick="mobileResizeMap()" type="submit">Search
+        </button>
+    </div>
+    <br>
+    <script>setAutocomplete()</script>
+</div>
+
+<div class="col-12 col;">
+    <div id="map" style="width:100%;display: block"></div>
+
+</div>
+<div class="col-12 col;" style = "max-height: 60%; overflow: scroll">
+    <div id="routes" style="width:100%;display: none">
+    </div>
+</div>
+<div class ="col-12 col" style = "max-height: 35%; overflow: scroll">
+    <div id="options" style="width:100%;display: none;"></div>
+</div>
+
+<div class="row">
+    <div class="col-12" id="footer">
+        {% include 'tabs.html' %}
+    </div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Game Information</h4>
+            </div>
+            <div class="modal-body">
+                <p>Hello there! Whether you're new to Dublin, or a South Dublin girl who went to Mount Anville and
+                    knows nothing but Dublin, we bet there's some places you haven't visited yet. If you look
+                    around the map on the homepage, you'll notice purple markers that look different than the orange station markers.
+                    These are what we believe to be the best spots in Dublin, and there's 20 spread out across
+                    the map. For every one you visit, we'll give you 10 points. And for every 50 points you earn, we'll
+                    exchange that for 5 Euro of Dublin Bus credit. Now get exploring!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--**************************************Build Time and Date picker*********************************************************-->
+
+<script>
+    $(document).ready(function () {
+        var url = new URL(window.location.href);
+        var arr = window.location.href.split('?');
+        if (arr.length > 1 && arr[1] !== '') {
+            var passedStart = url.searchParams.get("start");
+            var passedEnd = url.searchParams.get("end");
+            document.getElementById("origin-input").value = passedStart;
+            document.getElementById("destination-input").value = passedEnd;
+            history.pushState(null, '', '/journeyplan/');
+            alert("We've set the start and end location, just enter a time and day!")
+        }
+        calendarBuilder();
+        $(function () {
+            $('#timepicker1').timepicker({
+                timeFormat: 'H:i',
+                dynamic: false,
+                dropdown: true,
+                scrollbar: true,
+                step: 30,
+            })
+        })
+    });
+    var currentDate = new Date();
+    var endDate = new Date();
+    var numberOfDaysToAdd = 4;
+    currentDate.setDate(currentDate.getDate() + 1);
+    endDate.setDate(currentDate.getDate() + numberOfDaysToAdd);
+
+    function calendarBuilder() {
+        $('input[name="daterange"]').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+            minDate: currentDate,
+            maxDate: endDate
+        })
+    }
+</script>
+<script>
+    var map;
+    var startLat;
+    var startLong;
+    var destLat;
+    var destLong;
+    markers = [];
+    var busPath;
+    var depTime;
+    var stopData = {{ load | safe }};
+    var route_data = {{ routedata | safe }};
+    var arrTime;
+    var LocationWindow;
+    var polylines = [];
+    var snappedCoordinates = [];
+    var placeIdArray = [];
+</script>
+
+<!--**************************************Jquery*********************************************************-->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!--**************************************BootStrap*********************************************************-->
+<script crossorigin="anonymous"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+<!--**************************************Scripts for date/time******************************************************-->
+
+<!-- Stylesheet for the time picker in the prediction box -->
+<link href="https://cdn.jsdelivr.net/npm/timepicker@1.11.15/jquery.timepicker.css" rel="stylesheet">
+
+<!-- library for the time picker in the prediction box -->
+<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+<!-- Updated JavaScript url -->
+<script src="https://cdn.jsdelivr.net/npm/timepicker@1.11.15/jquery.timepicker.js"></script>
+
+<!--datePicker for javascript-->
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+<!-- jQuery UI library used for time picker in the prediction box -->
+<link href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+
+<!--**************************************Links to local JS*********************************************************-->
+<script src="{% static 'js/toword.js' %}"></script>
+<script src="{% static 'js/favRoute.js' %}"></script>
+<script src="{% static 'js/mapResizeResetFunction.js' %}"></script>
+<script src="{% static 'js/mobile_getRoute.js' %}"></script>
+<script src="{% static 'js/mobileGetLatLong.js' %}"></script>
+<script src="{% static 'js/findLocation.js' %}"></script>
+<script src="{% static 'js/mobilePredict.js' %}"></script>
+<script src="{% static 'js/autocompleteFunctions.js' %}"></script>
+<script src="{% static 'js/changeHTML.js' %}"></script>
+<script src="{% static 'js/mapResizeResetFunctions.js' %}"></script>
+<script src="{% static 'js/realTimeDate.js' %}"></script>
+<script src="{% static 'js/routingFunctions.js' %}"></script>
+<script src="{% static 'js/mobile_map.js' %}"></script>
+<link href="{% static 'css/m_journeyplan1.css' %}" rel="stylesheet">
+
+
+
+<!--**************************************Google Maps*********************************************************-->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvFaUDR5Wnl172znC5agS97gPJmyXHwOs&libraries=places&callback=initMap">
+
+</script>
+</body>
+
+{% endblock %}

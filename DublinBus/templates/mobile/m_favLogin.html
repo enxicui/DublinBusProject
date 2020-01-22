@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+{#<div class="container-fluid">#}
+
+    <div class="row" id="header-row">
+        <div class="col-3">
+            <img src="{% static 'smalllogo.png' %}" class="smalllogo">
+        </div>
+        <div class="col-6">
+            <p style="margin-top: 5%">Dublin Bus</p>
+        </div>
+        <div class="col-3">
+        </div>
+    </div>
+
+{#    <div class="row" id="holder-row">#}
+{#        <div class="col-12">#}
+
+            <a href="{% url 'm_favLogin' %}"><img src="../static/img/login-icon-yellow.png" style="height: 40px; width: 45px;"></a>
+
+            <a href="{% url 'm_signup' %}"><img src="../static/img/sign-up.png" style="height: 37px; width: 42px;"></a>
+{#        </div>#}
+{#    </div>#}
+
+{#</div>#}
+     <form method="post" style="padding: 5%">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"><img src="../static/img/login-icon-yellow.png"
+                                              style="height: 40px; width: 40px;"></button>
+    </form>
+
+    <div class="row">
+
+        <div class="col-12" id="footer-div">
+
+            {% include 'tabs.html' %}
+
+        </div>
+
+    </div>
+<link href="{% static 'css/m_favLogin.css' %}" rel="stylesheet">
+
+{% endblock %}

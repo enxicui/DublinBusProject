@@ -1,0 +1,489 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% if user.is_authenticated %}
+
+        <head>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvFaUDR5Wnl172znC5agS97gPJmyXHwOs&libraries=places&callback=initMap">
+            </script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+                    type="text/javascript"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                  crossorigin="anonymous">
+            <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+
+            <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css">
+
+            <style>
+
+                #favourite-holder {
+                    text-align: center;
+                }
+
+                #head {
+                    height: 15%;
+                    width: auto;
+                    text-align: center;
+                }
+
+                #add-button {
+                    border-radius: 500%;
+                    text-align: center;
+                    border-color: rgba(2, 147, 222, 0.01) !important;
+                    background-color: rgba(2, 147, 222, 0.01) !important;
+
+                }
+
+                .flex-container {
+
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    align-items: stretch;
+                    justify-content: center;
+                    background-color: rgba(2, 147, 222, 0.5);
+                    border-radius: 15px;
+                    padding: 5px;
+                    font-size: 50%;
+                    width: 100%;
+
+                    text-align: center;
+                    height: 10vh;
+                    line-height: 5vh;
+
+                }
+
+                #flex1div {
+                    width: 66%;
+                    padding-top: 1.5vh;
+                    font-size: 2.5vh;
+                    text-align: center;
+
+                }
+
+                #flex2div {
+                    /* width: 25%; */
+                    padding-top: 1.5vh;
+                    font-size: 4vh;
+                    text-align: center;
+
+                }
+
+                #plusicon {
+                    text-align: center;
+                    color: #353b48;
+                    font-size: 5vh;
+                }
+
+
+                #middle-favourite {
+                {#background: white;#}{#width: 100%;#}{#height: 80vh;#}{#background-color: grey;#}
+                    /* padding: 5%; */
+                }
+
+                .container-fluid {
+                    font-family: 'News Cycle', sans-serif;
+
+                }
+
+                #favourite-holder {
+
+                    /* margin: 20px; */
+                {#background-color: white;#} margin-left: 3%;
+                    margin-top: 2%;
+                    height: 78vh;
+
+                    width: 94%;
+                }
+
+                #favourite-Add {
+                {#background-color: white;#}{#width: 100%;#}{#height: 8vh;#} padding: 10px;
+                {#display: block;#}
+                }
+
+                #favourite-Input {
+                {#background-color: white;#} width: 100%;
+                    height: 10vh;
+                    /* padding: 50px; */
+                    /* margin-top : 100px; */
+                    display: none;
+                }
+
+
+                #add-holder {
+                {#background-color: gainsboro;#}{#border-radius: 15px;#}{#padding: 5px;#} border-color: rgba(2, 147, 222, 0.5) !important;
+                {#padding-top: 7px;#} font-size: 3vh;
+                {#text-align: center;#}{#padding-left: 20%;#}{#/* height: 100%; */#}{#line-height: 5vh;#}
+                }
+
+                {##input ./-holder {#}
+                {#    background-color: gainsboro;#}
+                {#    border-radius: 15px;#}
+                {#    padding: 5px;#}
+                {#    padding-top: 3%;#}
+                {#    /* margin-top: 100px */#}
+                {#    font-size: 3vh;#}
+                {##}
+                {#    text-align: center;#}
+                {#    padding-left: 5%;#}
+                {#    padding-right: 4%;#}
+                {##}
+                {#    text-align: center;#}
+                {#    padding-left: 10%;#}
+                {##}
+                {#    /* height: 100%; */#}
+                {#    line-height: 5vh;#}
+                {#    height: 30vh;#}
+
+
+                #plusicon {
+                    text-align: center;
+                    color: #353b48;
+                    font-size: 5vh;
+                }
+
+                .btn.btn-primary {
+                    size: 50px;
+                    /* margin-left: 50%; */
+                }
+
+                .flex-container {
+
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    align-items: stretch;
+                    justify-content: center;
+                    background-color: white;
+                    border-radius: 15px;
+                    padding: 5px;
+                    font-size: 50%;
+                    width: 100%;
+
+                    text-align: center;
+                    height: 10vh;
+                    line-height: 5vh;
+
+                }
+
+                #one-holder {
+                    /* background-color: rgba(2, 147, 222, 0.5);
+                    border-radius: 15px;
+                    padding: 5px;
+                    font-size: 50%;
+                    width: 100%;
+
+                    text-align: center;
+                  height: 10vh;
+                  line-height:5vh; */
+                    display: none;
+                }
+
+                #flex1div {
+                    width: 66%;
+                    padding-top: 1.5vh;
+                    font-size: 2.5vh;
+                    text-align: center;
+
+                }
+
+                #flex2div {
+                    /* width: 25%; */
+                    padding-top: 1.5vh;
+                    font-size: 4vh;
+                    text-align: center;
+
+                }
+
+                #planJourney {
+                    border-radius: 20px;
+                    height: 6vh;
+                    width: 25vh;
+                    font-size: 15px;
+
+                }
+
+                #addfavourite {
+                    border-radius: 20px;
+                    font-size: 20px;
+                    margin-top: 2%;
+
+                }
+
+                form {
+                    width: 50%;
+                    padding: 5px;
+                    margin-bottom: 20px;
+                    margin-left: 25%;
+                }
+
+
+                label {
+                    margin-right: 10px;
+                    /* width: 110px; */
+                }
+
+
+                #submitbutton {
+                    padding: 10px;
+                    text-align: right;
+                    padding-right: 15%;
+                }
+
+                #box {
+                    display: flex;
+                }
+
+                #field-wrap {
+                    padding: 10px;
+                }
+
+                .flex-container {
+                    background-color: #f6fffd;
+                    width: 80%;
+                    height: 20%;
+                    margin-left: 10%;
+                    margin-right: 10%;
+
+
+                }
+
+                {#https://smallenvelop.com/display-loading-icon-page-loads-completely/#}
+                .no-js #loader {
+                    display: none;
+                }
+
+                .js #loader {
+                    display: block;
+                    position: absolute;
+                    left: 100px;
+                    top: 0;
+                }
+
+                .se-pre-con {
+                    position: fixed;
+                    left: 0px;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 9999;
+                    background: url(../static/img/animated-bus.gif) center no-repeat #2775BA;
+                }
+
+
+            </style>
+        </head>
+
+
+
+        <script>
+            function setAutocomplete() {
+                var originInput = document.getElementById('origin-input');
+                var destinationInput = document.getElementById('destination-input');
+                //define a center and circle for our autocomplete search, this makes it so that it's biased toward this area when
+                //searching for a place name
+                var center = new google.maps.LatLng(53.33306, -6.24889);
+                var circle = new google.maps.Circle({
+                    center: center,
+                    radius: 10000
+                });
+                //setting up the autcomplete and adding the bound circle of 10KM for suggestions
+                var originAutocomplete = new google.maps.places.Autocomplete(originInput);
+                // set route numbers here?
+                var destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput);
+                originAutocomplete.setBounds(circle.getBounds());
+                destinationAutocomplete.setBounds(circle.getBounds());
+                this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+                this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+                var marker = new google.maps.Marker({position: dublin, map: map});
+            }
+        </script>
+        <div class="se-pre-con"></div>
+        <div id="head" style="background: rgba(4, 36, 85, 0.5); padding-top: 1%">
+            <img class="smalllogo" src="{% static 'smalllogo.png' %}" style="display: inline">
+            <h2 style="display: inline">Dublin Bus</h2>
+            <div style = "cursor: pointer; color:white;float: right; max-width:150px"><h6 data-toggle="modal" data-target="#myModal">Have you been playing our game? If not, click here to learn more!</h6></div>
+
+        </div>
+        <div>
+            {% include 'header.html' %}
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Game Information</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Hello there! Whether you're new to Dublin, or a South Dublin girl who went to Mount Anville and
+                            knows nothing but Dublin, we bet there's some places you haven't visited yet. If you look
+                            around the map on the homepage, you'll notice purple markers that look different than the orange station markers.
+                            These are what we believe to be the best spots in Dublin, and there's 20 spread out across
+                            the map. For every one you visit, we'll give you 10 points. And for every 50 points you earn, we'll
+                            exchange that for 5 Euro of Dublin Bus credit. Now get exploring!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="z-index: 99;height: 50px;width: 100px;position: absolute;margin-left: 88%;">
+            <h5>Hi {{ user.username }}!</h5>
+            <a href="{% url 'logout' %}" style="color: darkblue" ; class="button;"><img
+                    src="../static/img/logout-yellow.png"
+                    style="height: 40px; width: 45px;"></a>
+        </div>
+        <script>
+            var user = '{{ user.username }}';
+            var favs = '{{ user.favourites }}';
+        </script>
+
+
+
+        <div class="row">
+            <div class="col-12" id="middle-favourite">
+                <!-- <p>middle section</p> -->
+                <div class="col-12" id="favourite-holder">
+
+
+                    <div id="favourite-Add">
+                        <div id="add-holder">
+                            <h5>Add new favourite route
+                                <button aria-pressed="false" autocomplete="off" class="btn btn-primary"
+                                        data-toggle="button"
+                                        id="add-button" type="button">
+                                    <img src="../static/img/plus.png"
+                                         style="height: 30px; width: 30px; margin-top: -50%;">
+{#                                    <i class="fas fa-plus-circle" id="plusicon"></i>#}
+                                </button>
+                            </h5>
+                        </div>
+                    </div>
+
+
+                    <div id="favourite-Input">
+                        <div id="input-holder">
+                            <form method="POST" style="margin-top: 3%; font-weight:900;">
+                                {% csrf_token %}
+
+
+                                <div class="field-wrap" style="margin-top: 2%;">
+                                    <label for="origin-input"> Start: </label>
+                                    <input autocomplete="off" class="controls" id="origin-input" type="text">
+
+
+                                </div>
+
+
+                                <div id="field-wrap" style="margin-top: 3%;">
+                                    <label for="destination-input">Destination: </label>
+                                    <input autocomplete="off" class="controls" id="destination-input"
+                                           type="text">
+                                    <script>setAutocomplete()</script>
+                                </div>
+
+                                <!-- {{ form.as_p }} -->
+
+                                <button class="btn btn-primary" id="addfavourite" onclick="updateUserFav(user)"
+                                        style="margin-top: 2%">Submit
+                                </button>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div id="one-holder"></div>
+
+                </div>
+            </div>
+
+        </div>
+        <script>
+            window.onload = function () {
+                if (favs.length > 0) {
+                    var favsArray = favs.split('*');
+                    for (var i = 0; i < favsArray.length; i++) {
+                        var startStop = favsArray[i].split(':');
+                        var startLoc = startStop[0];
+                        var endLoc = startStop[1];
+                        var startLocShort = startLoc.split(",")[0];
+                        var endLocShort = endLoc.split(",")[0];
+                        let startLocRem = startLoc.replace(/&#39;/g, "4343");
+                        let endLocRem = endLoc.replace(/&#39;/g, "4343");
+                        startLoc = startLoc.replace(/&#39;/g,"");
+                        endLoc = endLoc.replace(/&#39;/g,"");
+                        console.log(endLocRem);
+                        document.getElementById('one-holder').insertAdjacentHTML('beforeend',
+                            "<div class=\"flex-container\" id='" + startLocShort + endLocShort + "'>" +
+                            "<div id=\"flex1div\"> <b>From: </b>" + startLocShort + "<b> To: </b>" + endLocShort +
+                            "</div><div id=\"flex2div\" style=\"margin-left: 3%;\"><img src=\"../static/img/place.png\" style=\"height: 35px; width: 35px\"; value='" + startLoc + "|" + endLoc + "' id=\"planJourney\" onclick=\"getFavRoute('" + startLoc + "','" + endLoc + "')\">"+
+                            "<img src='../static/img/like.png' style='height: 35px; width: 35px;' id='delete' onclick='removeFav(\"" + startLocRem + "\",\"" + endLocRem + "\",\"" + user + "\")'>" +
+                            "</div>" +
+                            "</div>");
+
+                    }
+                    document.getElementById("favourite-Add").style.display = "block";
+                    document.getElementById("favourite-Input").style.display = "none";
+                    document.getElementById("one-holder").style.display = "block";
+                }
+            }
+
+
+        </script>
+
+
+    {% else %}
+        <div id="head"
+             style="background: rgba(4, 36, 85, 0.5); padding-top: 1%; height: 15%; width: auto; text-align: center;">
+            <img class="smalllogo" style="display: inline" src="{% static 'smalllogo.png' %}">
+            <h2 style="display: inline">Dublin Bus</h2>
+        </div>
+        <div style="z-index: 99; height: 50px; width: 100px; position: absolute; margin-left: 88%;">
+
+            <a href="{% url 'login' %}"><img src="../static/img/login-icon-yellow.png"
+                                             style="height: 40px; width: 45px;"></a>
+            <a href="{% url 'signup' %}"><img src="../static/img/sign-up.png"
+                                              style="height: 37px; width: 42px;"></a>
+        </div>
+        <div>
+            {% include 'header.html' %}
+        </div>
+
+        <h5 style="text-align: center; padding-top: 10%; ">Apologies, but you must login to use the favourites
+            function!</h5>
+
+    {% endif %}
+
+    <script src="{% static '/js/addfavourite.js' %}"></script>
+    <script src="{% static '/js/createfavourite.js' %}"></script>
+
+    <script src="{% static '/js/map.js' %}"></script>
+    <script src="{% static 'js/favRoute.js' %}"></script>
+
+    <script src="{% static '/js/toword.js' %}"></script>
+    <script src="{% static '/js/mobile_getRoute.js' %}"></script>
+    <script src="{% static '/js/getLatLong.js' %}"></script>
+    <script src="{% static '/js/findLocation.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");
+            ;
+        });
+    </script>
+
+{% endblock %}

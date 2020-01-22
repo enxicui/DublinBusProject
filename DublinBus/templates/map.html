@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+
+    <head>
+<title>Dublin Bus</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://kit.fontawesome.com/a7c1f97ec0.js"></script>
+        <style>
+            /* Set the size of the div element that contains the map */
+            #map {
+                height: 73vh;
+                width: 10px;
+            }
+
+            #head {
+                height: 15%;
+                width: auto;
+
+            }
+
+
+            #info, #realtime {
+                position: relative;
+                background-color: #4682b4;
+                border: none;
+                font-size: 15px;
+                color: #ffffff;
+                padding: 3px;
+                padding-top: 3px;
+                text-align: center;
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+                text-decoration: none;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            #info, #realtime:after {
+                content: "";
+                background: #f1f1f1;
+                display: block;
+                position: absolute;
+                margin-left: -20px !important;
+                margin-top: -120%;
+                opacity: 0.01;
+                transition: all 0.8s
+            }
+
+            #info, #realtime:active:after {
+                padding: 0;
+                margin: 0;
+                opacity: 1;
+                transition: 0s
+            }
+
+            #realtime_p {
+                margin-bottom: 1px;
+                margin-left: 2px;
+                margin-right: 2px;
+            }
+
+            {#https://smallenvelop.com/display-loading-icon-page-loads-completely/#}
+            .no-js #loader {
+                display: none;
+            }
+
+            .js #loader {
+                display: block;
+                position: absolute;
+                left: 100px;
+                top: 0;
+            }
+
+            .se-pre-con {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: url(../static/img/animated-bus.gif) center no-repeat #2775BA;
+            }
+
+
+            @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+        </style>
+
+    </head>
+
+    <body>
+    <div class="se-pre-con"></div>
+    <div id="weather_box" style=" position: absolute; z-index: 99; float: left; margin-left: 4%; color: white;"></div>
+    <div id="head" style="background: rgba(4, 36, 85, 0.5); padding-top: 1%; text-align: center">
+
+        <img class="smalllogo" src="{% static 'smalllogo.png' %}">
+        <h2 style="display: inline">Dublin Bus</h2>
+        <div style = "cursor: pointer; color:white;float: right; max-width:150px"><h6 data-toggle="modal" data-target="#myModal">Have you been playing our game? If not, click here to learn more!</h6></div>
+    </div>
+    </div>
+    {% if user.is_authenticated %}
+    <div style="z-index: 99; height: 50px; width: 100px; position: absolute; margin-left: 88%;">
+         <h5>Hi {{ user.username }}!</h5>
+
+            <a href="{% url 'logout' %}" style="color: darkblue" ; class="button;"><img
+                    src="../static/img/logout-yellow.png"
+                    style="height: 40px; width: 45px;"></a>
+    </div>
+    {% else %}
+    <div style="z-index: 99; height: 50px; width: 100px; position: absolute; margin-left: 88%;">
+
+        <a href="{% url 'login' %}"><img src="../static/img/login-icon-yellow.png"
+                                         style="height: 40px; width: 45px;"></a>
+        <a href="{% url 'signup' %}"><img src="../static/img/sign-up.png"
+                                          style="height: 37px; width: 42px;"></a>
+    </div>
+    {% endif %}
+
+    <div>
+        {% include 'header.html' %}
+    </div>
+
+
+    <div class="row">
+        <div class="col-12" id="map"></div>
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Game Information</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Hello there! Whether you're new to Dublin, or a South Dublin girl who went to Mount Anville and
+                        knows nothing but Dublin, we bet there's some places you haven't visited yet. If you look
+                        around the map on the homepage, you'll notice purple markers that look different than the orange station markers.
+                        These are what we believe to be the best spots in Dublin, and there's 20 spread out across
+                        the map. For every one you visit, we'll give you 10 points. And for every 50 points you earn, we'll
+                        exchange that for 5 Euro of Dublin Bus credit. Now get exploring!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var data = {{ load | safe }};
+        var route_data = {{ routedata | safe }};
+        var tourism = {{tourismData | safe }};
+    </script>
+    {% if user.is_authenticated %}
+    <script>
+        var user = '{{ user.username }}';
+        window.setInterval(function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var locations = '{{ user.places_visited }}';
+                    if (locations.length > 0) {
+                        var favsArray = locations.split('*');
+                    }
+                    else {
+                        favsArray = [];
+                    }
+                    pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                    for (var i = 0; i < tourism.length; i++) {
+                        if (distance(position.coords.latitude, position.coords.longitude, tourism[i].lat, tourism[i].lon)
+                            < 0.1 && favsArray.includes(tourism[i].name) == true ) {
+                            alert("You have just visited " + tourism[i].name + ", earning 10 points. Nice one! Keep exploring!");
+                            tourismXHTTP = new XMLHttpRequest();
+                            tourismXHTTP.open("POST", '/users/addLocation/');
+                            tourismXHTTP.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+                            tourismXHTTP.send("location=" + tourism[i].name + "&points=10+&user="+user);
+                            var returnData = this.responseText;
+                            if (returnData == 400) {
+                                alert("There was an error on the server side of things. Try again!")
+                            }
+                        }
+                    }
+                })
+            }
+        }, 60000);
+    </script>
+    {% endif %}
+    <script src="{% static '/js/initmap.js' %}"></script>
+    <script src="{% static '/js/findLocation.js' %}"></script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvFaUDR5Wnl172znC5agS97gPJmyXHwOs&libraries=places&callback=initMap">
+    </script>
+
+
+    <script>
+
+        {#const app = document.getElementById('root');#}
+
+        $.ajax({
+            url: 'http://api.openweathermap.org/data/2.5/weather?appid=a8e1877ec087d7a2904f50a41ed61bfa&q=Dublin&units=metric',
+            type: "GET",
+            dataType: "jsonp",
+            jsonpCallback: "jsonp",
+            success: function (data) {
+
+                let widget = "<img src = 'http://openweathermap.org/img/w/" + data.weather[0].icon + ".png' > " + "<br/>"
+                    + "<b>" + data.weather[0].description + "</b>"
+                document.getElementById("weather_box").innerHTML = widget;
+
+            }
+        })
+
+
+    </script>
+    {#    https://smallenvelop.com/display-loading-icon-page-loads-completely/#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+        //paste this code under the head tag or in a separate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");
+            ;
+        });
+    </script>
+
+    </body>
+{% endblock %}
