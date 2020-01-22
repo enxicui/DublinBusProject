@@ -1,0 +1,11 @@
+progrnumber,actual_stop_id,stop_lat,stop_lon,stop_id,stop_name
+1,3085,53.30248014,-6.178370832000001,8250DB003085,"Blackrock (DunLaoghaire-Rathdown), Outside Train Station"
+2,3082,53.30045359,-6.178096999,8250DB003082,"Blackrock (DunLaoghaire-Rathdown), Frascati Road"
+16,4984,53.27372961,-6.203450197,8250DB004984,"Sandyford, Burton Hall Road"
+17,448,53.27483875,-6.2066725929999995,8250DB000448,"Sandyford, Burton Hall Road"
+21,4350,53.27618843,-6.2229761429999995,8250DB004350,"Sandyford, Blackthorn Drive"
+22,5143,53.27566696,-6.227796261,8250DB005143,"Sandyford, Blackthorn Drive (Limes Road)"
+23,2833,53.27439192,-6.229093581,8250DB002833,"Sandyford, Sandyford Road (Blackthorn Drive)"
+24,6006,53.26986604,-6.228770892999999,8250DB006006,"Ballinteer, Sandyford Road"
+25,3493,53.26520725,-6.229788008,8250DB003493,"Ballinteer, Lambs Cross"
+26,3494,53.265403000000006,-6.234502292,8250DB003494,"Ballinteer, Blackglen Court"
